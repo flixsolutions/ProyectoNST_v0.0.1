@@ -1,0 +1,74 @@
+/*Login Component Styles*/
+#header_cf15_0{padding-left:50px; margin-top:50px;}
+#h4_cf15_0{font-weight:bold;}
+#main_login{border-top:solid; border-top-color:RGB(238,238,238); margin-top:20px; padding-left:50px;}
+#topForm{col-xs-4 margin: 0px auto; padding-left:70px; width: 1200px; height: 468px;}
+#login_form{width:400px; clear:left; margin-top:10px}
+#img_cf15_0{padding: 30px}
+#button_cf15_0{width: 100%; background-color: RGB(120,38,52)}
+#login_img{margin-left:100px; width:700px;}
+
+*{
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.gradient-div {
+  /*width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 90px 10vw 0 0;
+  border-color: yellow black transparent transparent;
+  transform: scale(1.0001);*/
+  border-top: 10px solid #fEfEfE;
+  /*border-bottom: 10px solid #fEfEfE;*/
+border-left: 20px solid #f6f6f6;
+}
+
+.parallelogram {
+	/*width: 150px;
+	height: 100px;*/
+	-webkit-transform: skew(3deg, 178deg);
+	   -moz-transform: skew(3deg, 178deg);
+	     -o-transform: skew(3deg, 178deg);
+		 transform: skew(3deg, 178deg);
+
+	background: RGBA(200,200,200,0.2);
+}
+
+#topForm {
+	width: 420px;
+	height: 450px;
+	background-image:url('../images/paperclip.gif');
+    background-repeat:no-repeat;
+    background-position:25px 1px;
+
+}
+
+
+/*Org chart circles*/
+circle.uno {
+  fill: transparent;
+  stroke: #f00;
+  stroke-width: 30;
+  stroke-dasharray: 0 316.16 153.08 159.08;
+}
+circle.dos {
+  fill: transparent;
+  stroke: #0f0;
+  stroke-width: 30;
+  stroke-dasharray: 0 473.24 152.08 2;
+}
+circle.tres {
+  fill: transparent;
+  stroke: RGB(122,54,122);
+  stroke-width: 30;
+  stroke-dasharray: 0 2 153.08 473.24;
+}
+circle.cuatro {
+  fill: transparent;
+  stroke: yellow;
+  stroke-width: 30;
+  stroke-dasharray: 0 159.08 153.08 316.16 ;
+}
