@@ -2,7 +2,7 @@
   "name": "proyectonst",
   "version": "0.0.1",
   "description": "Proyecto de Innovación NST",
-  "main": "app-server.js",
+  "main": "app/main.js",
   "scripts": {
     "prestart": "webpack",
     "start": "webpack-dev-server"
