@@ -21485,26 +21485,47 @@
 
 	var _reactRouter = __webpack_require__(179);
 
-	var _Header = __webpack_require__(234);
+	var _NotFound = __webpack_require__(234);
+
+	var _NotFound2 = _interopRequireDefault(_NotFound);
+
+	var _Header = __webpack_require__(235);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Body = __webpack_require__(235);
+	var _Body = __webpack_require__(236);
 
 	var _Body2 = _interopRequireDefault(_Body);
 
-	var _Footer = __webpack_require__(237);
+	var _Footer = __webpack_require__(243);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
+	var _Login = __webpack_require__(237);
+
+	var _Login2 = _interopRequireDefault(_Login);
+
+	var _Kpi = __webpack_require__(239);
+
+	var _Kpi2 = _interopRequireDefault(_Kpi);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var RouteHandler = _reactRouter.Router.RouteHandler;
 
 	var App = function App() {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
 	    _react2.default.createElement(_Header2.default, null),
-	    _react2.default.createElement(_Body2.default, null),
+	    _react2.default.createElement(
+	      _reactRouter.Router,
+	      { history: _reactRouter.hashHistory },
+	      _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Body2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: '/kpi', component: _Kpi2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NotFound2.default })
+	    ),
 	    _react2.default.createElement(_Footer2.default, null)
 	  );
 	};
@@ -26424,16 +26445,240 @@
 
 	var React = __webpack_require__(1);
 
-	var Header = React.createClass({
-	  displayName: "Header",
+	var NotFound = React.createClass({
+	  displayName: "NotFound",
 	  render: function render() {
 	    return React.createElement(
-	      "header",
-	      { className: "row" },
+	      "div",
+	      { className: "w3-white w3-text-grey w3-card-4" },
 	      React.createElement(
-	        "h1",
-	        null,
-	        "Header from component"
+	        "div",
+	        { className: "w3-display-container" },
+	        React.createElement("img", { src: "/images/person.png", style: { width: "100%", height: "50%" }, alt: "Avatar" }),
+	        React.createElement(
+	          "div",
+	          { className: "w3-display-bottomleft w3-container w3-text-black" },
+	          React.createElement(
+	            "h2",
+	            null,
+	            "Susana Gayt\xE1n"
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "w3-container" },
+	        React.createElement(
+	          "p",
+	          null,
+	          React.createElement("i", { className: "fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal" }),
+	          "Designer"
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          React.createElement("i", { className: "fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" }),
+	          "London, UK"
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          React.createElement("i", { className: "fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal" }),
+	          "ex@mail.com"
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          React.createElement("i", { className: "fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" }),
+	          "1224435534"
+	        ),
+	        React.createElement("hr", null),
+	        React.createElement(
+	          "p",
+	          { className: "w3-large" },
+	          React.createElement(
+	            "b",
+	            null,
+	            React.createElement("i", { className: "fa fa-asterisk fa-fw w3-margin-right w3-text-teal" }),
+	            "Skills"
+	          )
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          "Adobe Photoshop"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "w3-progress-container w3-round-xlarge w3-small" },
+	          React.createElement(
+	            "div",
+	            { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "90%" } },
+	            React.createElement(
+	              "div",
+	              { className: "w3-center w3-text-white" },
+	              "90%"
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          "Photography"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "w3-progress-container w3-round-xlarge w3-small" },
+	          React.createElement(
+	            "div",
+	            { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "80%" } },
+	            React.createElement(
+	              "div",
+	              { className: "w3-center w3-text-white" },
+	              "80%"
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          "Illustrator"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "w3-progress-container w3-round-xlarge w3-small" },
+	          React.createElement(
+	            "div",
+	            { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "75%" } },
+	            React.createElement(
+	              "div",
+	              { className: "w3-center w3-text-white" },
+	              "75%"
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          "Media"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "w3-progress-container w3-round-xlarge w3-small" },
+	          React.createElement(
+	            "div",
+	            { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "50%" } },
+	            React.createElement(
+	              "div",
+	              { className: "w3-center w3-text-white" },
+	              "50%"
+	            )
+	          )
+	        ),
+	        React.createElement("br", null),
+	        React.createElement(
+	          "p",
+	          { className: "w3-large w3-text-theme" },
+	          React.createElement(
+	            "b",
+	            null,
+	            React.createElement("i", { className: "fa fa-globe fa-fw w3-margin-right w3-text-teal" }),
+	            "Languages"
+	          )
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          "English"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "w3-progress-container w3-round-xlarge" },
+	          React.createElement("div", { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "100%" } })
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          "Spanish"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "w3-progress-container w3-round-xlarge" },
+	          React.createElement("div", { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "55%" } })
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          "German"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "w3-progress-container w3-round-xlarge" },
+	          React.createElement("div", { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "25%" } })
+	        ),
+	        React.createElement("br", null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = NotFound;
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _reactRouter = __webpack_require__(179);
+
+	var React = __webpack_require__(1);
+
+	var Header = React.createClass({
+	  displayName: 'Header',
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'w3-row w3-card-4' },
+	      React.createElement(
+	        'div',
+	        { className: 'w3-threequarter w3-container center' },
+	        React.createElement(
+	          'h4',
+	          null,
+	          'Scorecard Nuevas Soluciones Tienda'
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-rest w3-container' },
+	        React.createElement(
+	          'ul',
+	          { className: 'w3-ul ' },
+	          React.createElement(
+	            'li',
+	            { className: 'w3-padding-16' },
+	            React.createElement('img', { src: './images/person.png', className: 'w3-left w3-circle w3-margin-right', style: { width: "60px" } }),
+	            React.createElement(
+	              'span',
+	              { className: 'w3-xlarge' },
+	              'Susana Gayt\xE1n'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              'span',
+	              null,
+	              'CPN'
+	            ),
+	            ' ',
+	            React.createElement(
+	              _reactRouter.Link,
+	              { 'data-toggle': 'pill', to: '/login', className: 'w3-right' },
+	              React.createElement('i', { className: 'fa fa-sign-in' }),
+	              'Salir'
+	            )
+	          )
+	        )
 	      )
 	    );
 	  }
@@ -26442,14 +26687,26 @@
 	module.exports = Header;
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _Login = __webpack_require__(236);
+	var _Login = __webpack_require__(237);
 
 	var _Login2 = _interopRequireDefault(_Login);
+
+	var _Tabs = __webpack_require__(238);
+
+	var _Tabs2 = _interopRequireDefault(_Tabs);
+
+	var _Menu = __webpack_require__(242);
+
+	var _Menu2 = _interopRequireDefault(_Menu);
+
+	var _NotFound = __webpack_require__(234);
+
+	var _NotFound2 = _interopRequireDefault(_NotFound);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26461,8 +26718,17 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'w3-container w3-panel w3-center' },
-	      React.createElement(_Login2.default, null)
+	      null,
+	      React.createElement(
+	        'div',
+	        { className: 'w3-third' },
+	        React.createElement(_NotFound2.default, null)
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-twothird' },
+	        React.createElement(_Tabs2.default, null)
+	      )
 	    );
 	  }
 	});
@@ -26470,7 +26736,7 @@
 	module.exports = Body;
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26484,19 +26750,81 @@
 	      "div",
 	      null,
 	      React.createElement(
-	        "h1",
-	        null,
-	        "Login Component Begin"
-	      ),
-	      React.createElement(
 	        "div",
-	        { id: "main_login", className: "" },
-	        React.createElement("div", { id: "topForm", className: "w3-card-4 w3-margin" })
-	      ),
-	      React.createElement(
-	        "h1",
-	        null,
-	        "Login Component End"
+	        { id: "main_login", className: "container-fluid" },
+	        React.createElement(
+	          "div",
+	          { id: "topForm", className: "w3-card-4 w3-margin" },
+	          React.createElement(
+	            "div",
+	            { id: "login_form", className: "parallelogram col s12 w3-col w3-card-2 w3-container w3-padding-xxlarge" },
+	            React.createElement(
+	              "div",
+	              null,
+	              React.createElement(
+	                "div",
+	                { className: "col s12 center" },
+	                React.createElement("img", { src: "../images/logo_femco.png", id: "img_cf15_0", alt: "FEMSA Comercio", className: "w3-image" })
+	              )
+	            ),
+	            React.createElement(
+	              "div",
+	              { className: "row" },
+	              React.createElement(
+	                "div",
+	                { className: "input-field col s12" },
+	                React.createElement(
+	                  "i",
+	                  { className: "material-icons prefix" },
+	                  "account_circle"
+	                ),
+	                React.createElement("input", { id: "name", name: "usuario", type: "number", min: "0", className: "validate", required: "", "aria-required": "true" }),
+	                React.createElement(
+	                  "label",
+	                  { htmlFor: "name" },
+	                  "N\xFAmero de Empleado"
+	                )
+	              )
+	            ),
+	            React.createElement(
+	              "div",
+	              { className: "row" },
+	              React.createElement(
+	                "div",
+	                { className: "input-field col s12" },
+	                React.createElement(
+	                  "i",
+	                  { className: "material-icons prefix" },
+	                  "lock_outline"
+	                ),
+	                React.createElement("input", { id: "password2", name: "password", type: "password", className: "validate", required: "", "aria-required": "true" }),
+	                React.createElement(
+	                  "label",
+	                  { htmlFor: "password2" },
+	                  "Password"
+	                )
+	              )
+	            ),
+	            React.createElement(
+	              "div",
+	              { className: "row" },
+	              React.createElement(
+	                "div",
+	                { className: "input-field col s12" },
+	                React.createElement(
+	                  "button",
+	                  { href: "#", className: "w3-btn w3-round", id: "button_cf15_0" },
+	                  "Entrar"
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { id: "login_img", className: "w3-rest w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge" },
+	            React.createElement("img", { src: "../images/front.png", className: "w3-round w3-hide-small w3-hide-medium w3-image" })
+	          )
+	        )
 	      )
 	    );
 	  }
@@ -26543,23 +26871,563 @@
 	// </div>
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	var _reactRouter = __webpack_require__(179);
+
+	var _Kpi = __webpack_require__(239);
+
+	var _Kpi2 = _interopRequireDefault(_Kpi);
+
+	var _FormRH = __webpack_require__(240);
+
+	var _FormRH2 = _interopRequireDefault(_FormRH);
+
+	var _FormSTTI = __webpack_require__(241);
+
+	var _FormSTTI2 = _interopRequireDefault(_FormSTTI);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var React = __webpack_require__(1);
+
+
+	var Tabs = React.createClass({
+	  displayName: 'Tabs',
+	  getInitialState: function getInitialState() {
+	    return {
+	      menuHome: "Home",
+	      menu1: "STTI",
+	      menu2: "RH",
+	      menuExit: "Salir"
+	    };
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'w3-example' },
+	      React.createElement('br', null),
+	      React.createElement(
+	        'ul',
+	        { className: 'nav nav-pills' },
+	        React.createElement(
+	          'li',
+	          { className: 'active' },
+	          React.createElement(
+	            'a',
+	            { 'data-toggle': 'pill', href: '#home' },
+	            React.createElement('i', { className: 'fa fa-home' }),
+	            ' ',
+	            this.state.menuHome
+	          )
+	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            'a',
+	            { 'data-toggle': 'pill', href: '#menu1' },
+	            React.createElement('i', { className: 'fa fa-search' }),
+	            ' ',
+	            this.state.menu1
+	          )
+	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            'a',
+	            { 'data-toggle': 'pill', href: '#menu2' },
+	            React.createElement('i', { className: 'fa fa-envelope' }),
+	            ' ',
+	            this.state.menu2
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'tab-content' },
+	        React.createElement(
+	          'div',
+	          { id: 'home', className: 'tab-pane fade in active' },
+	          React.createElement(
+	            'h3',
+	            null,
+	            this.state.menuHome
+	          ),
+	          React.createElement(
+	            'p',
+	            null,
+	            'Informaci\xF3n general de los kpis'
+	          ),
+	          React.createElement(_Kpi2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'menu1', className: 'tab-pane fade' },
+	          React.createElement(
+	            'h3',
+	            null,
+	            this.state.menu1
+	          ),
+	          React.createElement(_FormSTTI2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'menu2', className: 'tab-pane fade' },
+	          React.createElement(
+	            'h3',
+	            null,
+	            this.state.menu2
+	          ),
+	          React.createElement(_FormRH2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'menu3', className: 'tab-pane fade' },
+	          React.createElement(
+	            'h3',
+	            null,
+	            this.state.menuExit
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Tabs;
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _Body = __webpack_require__(236);
+
+	var _Body2 = _interopRequireDefault(_Body);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var React = __webpack_require__(1);
+
+
+	var Kpi = React.createClass({
+	  displayName: 'Kpi',
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'svg',
+	        { width: '400', height: '450' },
+	        React.createElement(
+	          'defs',
+	          null,
+	          React.createElement(
+	            'pattern',
+	            { id: 'image', x: '0%', y: '0%', height: '100%', width: '100%', viewBox: '0 0 512 512' },
+	            React.createElement('image', { x: '0', y: '0', width: '512', height: '512', src: '../images/person.png' })
+	          )
+	        ),
+	        React.createElement('circle', { className: 'uno', r: '100', cx: '200', cy: '225' }),
+	        React.createElement('circle', { className: 'dos', r: '100', cx: '200', cy: '225' }),
+	        React.createElement('circle', { className: 'tres', r: '100', cx: '200', cy: '225' }),
+	        React.createElement('circle', { className: 'cuatro', r: '100', cx: '200', cy: '225' })
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Kpi;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var FormRH = React.createClass({
+	  displayName: "FormRH",
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "form",
+	        { className: "form-horizontal" },
+	        React.createElement(
+	          "div",
+	          { className: "form-group" },
+	          React.createElement(
+	            "label",
+	            { className: "control-label col-sm-2", htmlFor: "email" },
+	            "Email:"
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "col-sm-10" },
+	            React.createElement("input", { type: "email", className: "form-control", id: "email", placeholder: "Enter email" })
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "form-group" },
+	          React.createElement(
+	            "label",
+	            { className: "control-label col-sm-2", htmlFor: "pwd" },
+	            "Password:"
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "col-sm-10" },
+	            React.createElement("input", { type: "password", className: "form-control", id: "pwd", placeholder: "Enter password" })
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "form-group" },
+	          React.createElement(
+	            "div",
+	            { className: "col-sm-offset-2 col-sm-10" },
+	            React.createElement(
+	              "div",
+	              { className: "checkbox" },
+	              React.createElement(
+	                "label",
+	                null,
+	                React.createElement("input", { type: "checkbox" }),
+	                " Remember me"
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "form-group" },
+	          React.createElement(
+	            "div",
+	            { className: "col-sm-offset-2 col-sm-10" },
+	            React.createElement(
+	              "button",
+	              { type: "submit", className: "btn btn-default" },
+	              "Guardar"
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = FormRH;
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var FormSTTI = React.createClass({
+	  displayName: "FormSTTI",
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "form",
+	        { className: "form-horizontal" },
+	        React.createElement(
+	          "div",
+	          { className: "form-group" },
+	          React.createElement(
+	            "label",
+	            { className: "control-label col-sm-2", htmlFor: "email" },
+	            "Email:"
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "col-sm-10" },
+	            React.createElement("input", { type: "email", className: "form-control", id: "email", placeholder: "Enter email" })
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "form-group" },
+	          React.createElement(
+	            "label",
+	            { className: "control-label col-sm-2", htmlFor: "pwd" },
+	            "Password:"
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "col-sm-10" },
+	            React.createElement("input", { type: "password", className: "form-control", id: "pwd", placeholder: "Enter password" })
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "form-group" },
+	          React.createElement(
+	            "div",
+	            { className: "col-sm-offset-2 col-sm-10" },
+	            React.createElement(
+	              "div",
+	              { className: "checkbox" },
+	              React.createElement(
+	                "label",
+	                null,
+	                React.createElement("input", { type: "checkbox" }),
+	                " Remember me"
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "form-group" },
+	          React.createElement(
+	            "div",
+	            { className: "col-sm-offset-2 col-sm-10" },
+	            React.createElement(
+	              "button",
+	              { type: "submit", className: "btn btn-default" },
+	              "Guardar"
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = FormSTTI;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _reactRouter = __webpack_require__(179);
+
+	var React = __webpack_require__(1);
+
+
+	var Menu = React.createClass({
+	  displayName: 'Menu',
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'w3-row' },
+	      React.createElement('br', null),
+	      React.createElement('br', null),
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'i',
+	          { className: 'material-icons' },
+	          'lightbulb_outline'
+	        ),
+	        React.createElement(
+	          'a',
+	          { 'data-toggle': 'collapse', 'data-target': '#estrategico', style: { color: "gray", cursor: "pointer" }, 'aria-expanded': 'true' },
+	          'Equipo estrat\xE9gico'
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'estrategico', className: 'collapse in' },
+	          React.createElement(
+	            'div',
+	            { style: { marginLeft: 50 } },
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Nuevas Soluciones Tienda'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Backoffice'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Centro de Competencias'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Soporte'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Infraestructura'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Sistema de Trabajo'
+	            ),
+	            React.createElement('br', null)
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { style: { clear: "both" } },
+	        React.createElement(
+	          'i',
+	          { className: 'material-icons' },
+	          'people'
+	        ),
+	        React.createElement(
+	          'a',
+	          { 'data-toggle': 'collapse', 'data-target': '#tactico', style: { color: "gray", cursor: "pointer" } },
+	          'Equipo t\xE1ctico'
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'tactico', className: 'collapse' },
+	          React.createElement(
+	            'div',
+	            { style: { marginLeft: 50 } },
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Comercial'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Comercial Servicios'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Operaciones'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Operaciones Procesos'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Responsable de Desarrollo xPos'
+	            ),
+	            React.createElement('br', null)
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { style: { clear: "both" } },
+	        React.createElement(
+	          'i',
+	          { className: 'material-icons' },
+	          'settings'
+	        ),
+	        React.createElement(
+	          'a',
+	          { 'data-toggle': 'collapse', 'data-target': '#colab', style: { color: "gray", cursor: "pointer" } },
+	          'Equipo Operativo'
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'colab', className: 'collapse' },
+	          React.createElement(
+	            'div',
+	            { style: { marginLeft: 50 } },
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Francisco Torres'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Elma Ayala'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Arturo Viveros'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Felix G\xE1lvez'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Blanca Rueda'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Sofir Villarreal'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              'Sa\xFAl Wade'
+	            ),
+	            React.createElement('br', null)
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Menu;
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
 	var React = __webpack_require__(1);
 
 	var Footer = React.createClass({
-	  displayName: 'Footer',
+	  displayName: "Footer",
 	  render: function render() {
 	    return React.createElement(
-	      'footer',
-	      null,
+	      "footer",
+	      { className: "center" },
 	      React.createElement(
-	        'h1',
+	        "p",
 	        null,
-	        'Footer Component'
+	        "Footer Component"
 	      )
 	    );
 	  }

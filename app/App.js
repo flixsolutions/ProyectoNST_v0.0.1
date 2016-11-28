@@ -13,6 +13,7 @@ var RouteHandler = Router.RouteHandler;
 const App = () =>(
     <div >
       <Header />
+      <br />
       <Router history={hashHistory}>
         <Route path='/' component={Body} />
         <Route path='/login' component={Login} />

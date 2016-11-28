@@ -1,4 +1,5 @@
 var React = require('react');
+import { Link} from 'react-router'
 
 var Login = React.createClass({
 
@@ -31,7 +32,7 @@ var Login = React.createClass({
         				</div>
                 <div className="row">
                   <div className="input-field col s12">
-        						<button href="#" className="w3-btn w3-round" id="button_cf15_0">Entrar</button>
+        						<button href="/" className="w3-btn w3-round" id="button_cf15_0"><Link to="/" style={{color: "#ffffff"}}>Entrar</Link></button>
         					</div>
         				</div>
 

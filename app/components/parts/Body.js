@@ -9,10 +9,11 @@ var Body = React.createClass({
     render(){
       return (
         <div>
-            <div className="w3-third">
-              <NotFound />
+            <div className="w3-quarter w3-row-padding">
+              <Menu />
+              <br/>
             </div>
-            <div className="w3-twothird">
+            <div className="w3-threequarter w3-row-padding">
               <Tabs />
             </div>
         </div>

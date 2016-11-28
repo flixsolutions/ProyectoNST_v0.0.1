@@ -13,7 +13,7 @@ var Header = React.createClass({
               <li className="w3-padding-16">
                 <img src="./images/person.png" className="w3-left w3-circle w3-margin-right" style={{width:"60px"}} />
                 <span className="w3-xlarge">Susana Gaytán</span><br/>
-                <span>CPN</span> <Link data-toggle="pill" to="/login" className="w3-right"><i className="fa fa-sign-in"></i>Salir</Link>
+                <span>CPN</span> <Link to="/" className="w3-right"><i className="fa fa-sign-in"></i> Salir</Link>
               </li>
             </ul>
           </div>
