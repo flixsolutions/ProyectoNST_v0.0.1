@@ -1,3 +1,5 @@
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
 /*Login Component Styles*/
 #header_cf15_0{padding-left:50px; margin-top:50px;}
 #h4_cf15_0{font-weight:bold;}
@@ -12,6 +14,7 @@
   border: 0;
   padding: 0;
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .gradient-div {
@@ -38,8 +41,6 @@ border-left: 20px solid #f6f6f6;
 }
 
 #topForm {
-	width: 420px;
-	height: 450px;
 	background-image:url('../images/paperclip.gif');
     background-repeat:no-repeat;
     background-position:25px 1px;

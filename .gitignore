@@ -1,5 +1,6 @@
 #proyect files
 /public/js/bundle.js
+*.rar
 
 # Logs
 logs

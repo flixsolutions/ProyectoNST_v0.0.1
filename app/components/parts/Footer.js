@@ -4,8 +4,8 @@ var Footer = React.createClass({
 
     render(){
       return (
-          <footer>
-            <h1>Footer Component</h1>
+          <footer className="center">
+            <p>Footer Component</p>
           </footer>
       )
     }
