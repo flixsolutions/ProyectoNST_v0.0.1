@@ -9,19 +9,23 @@ import Kpi from './components/Kpi'
 
 var RouteHandler = Router.RouteHandler;
 
+const Container = (props) => <div>
+  <Header name="Susana Gaytan" rol="CPN" avatar="person"/>
+  <br />
+  {props.children}
+  <Footer />
+</div>
 
 const App = () =>(
-    <div >
-      <Header />
-      <br />
       <Router history={hashHistory}>
-        <Route path='/' component={Body} />
-        <Route path='/login' component={Login} />
-        <Route path='/kpi' component={Kpi} />
-        <Route path='*' component={NotFound} />
+        <Route path='/' component={Container}>
+          <IndexRoute component={Login} />
+          <Route path='/dashboard' component={Body} />
+          <Route path='/kpi' component={Kpi} />
+          <Route path='/login' component={Login} />
+          <Route path='*' component={NotFound} />
+        </Route>
       </Router>
-      <Footer />
-    </div>
   )
 
 export default App

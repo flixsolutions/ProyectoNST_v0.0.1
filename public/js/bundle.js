@@ -21497,7 +21497,7 @@
 
 	var _Body2 = _interopRequireDefault(_Body);
 
-	var _Footer = __webpack_require__(243);
+	var _Footer = __webpack_require__(248);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -21513,20 +21513,30 @@
 
 	var RouteHandler = _reactRouter.Router.RouteHandler;
 
-	var App = function App() {
+	var Container = function Container(props) {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    _react2.default.createElement(_Header2.default, null),
-	    _react2.default.createElement(
-	      _reactRouter.Router,
-	      { history: _reactRouter.hashHistory },
-	      _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Body2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: '/kpi', component: _Kpi2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NotFound2.default })
-	    ),
+	    _react2.default.createElement(_Header2.default, { name: 'Susana Gaytan', rol: 'CPN', avatar: 'person' }),
+	    _react2.default.createElement('br', null),
+	    props.children,
 	    _react2.default.createElement(_Footer2.default, null)
+	  );
+	};
+
+	var App = function App() {
+	  return _react2.default.createElement(
+	    _reactRouter.Router,
+	    { history: _reactRouter.hashHistory },
+	    _react2.default.createElement(
+	      _reactRouter.Route,
+	      { path: '/', component: Container },
+	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _Login2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: '/dashboard', component: _Body2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: '/kpi', component: _Kpi2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NotFound2.default })
+	    )
 	  );
 	};
 
@@ -26450,173 +26460,16 @@
 	  render: function render() {
 	    return React.createElement(
 	      "div",
-	      { className: "w3-white w3-text-grey w3-card-4" },
+	      { className: "w3-center" },
 	      React.createElement(
-	        "div",
-	        { className: "w3-display-container" },
-	        React.createElement("img", { src: "/images/person.png", style: { width: "100%", height: "50%" }, alt: "Avatar" }),
-	        React.createElement(
-	          "div",
-	          { className: "w3-display-bottomleft w3-container w3-text-black" },
-	          React.createElement(
-	            "h2",
-	            null,
-	            "Susana Gayt\xE1n"
-	          )
-	        )
+	        "h1",
+	        null,
+	        "404... Page not found!"
 	      ),
 	      React.createElement(
-	        "div",
-	        { className: "w3-container" },
-	        React.createElement(
-	          "p",
-	          null,
-	          React.createElement("i", { className: "fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal" }),
-	          "Designer"
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          React.createElement("i", { className: "fa fa-home fa-fw w3-margin-right w3-large w3-text-teal" }),
-	          "London, UK"
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          React.createElement("i", { className: "fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal" }),
-	          "ex@mail.com"
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          React.createElement("i", { className: "fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" }),
-	          "1224435534"
-	        ),
-	        React.createElement("hr", null),
-	        React.createElement(
-	          "p",
-	          { className: "w3-large" },
-	          React.createElement(
-	            "b",
-	            null,
-	            React.createElement("i", { className: "fa fa-asterisk fa-fw w3-margin-right w3-text-teal" }),
-	            "Skills"
-	          )
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          "Adobe Photoshop"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "w3-progress-container w3-round-xlarge w3-small" },
-	          React.createElement(
-	            "div",
-	            { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "90%" } },
-	            React.createElement(
-	              "div",
-	              { className: "w3-center w3-text-white" },
-	              "90%"
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          "Photography"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "w3-progress-container w3-round-xlarge w3-small" },
-	          React.createElement(
-	            "div",
-	            { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "80%" } },
-	            React.createElement(
-	              "div",
-	              { className: "w3-center w3-text-white" },
-	              "80%"
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          "Illustrator"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "w3-progress-container w3-round-xlarge w3-small" },
-	          React.createElement(
-	            "div",
-	            { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "75%" } },
-	            React.createElement(
-	              "div",
-	              { className: "w3-center w3-text-white" },
-	              "75%"
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          "Media"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "w3-progress-container w3-round-xlarge w3-small" },
-	          React.createElement(
-	            "div",
-	            { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "50%" } },
-	            React.createElement(
-	              "div",
-	              { className: "w3-center w3-text-white" },
-	              "50%"
-	            )
-	          )
-	        ),
-	        React.createElement("br", null),
-	        React.createElement(
-	          "p",
-	          { className: "w3-large w3-text-theme" },
-	          React.createElement(
-	            "b",
-	            null,
-	            React.createElement("i", { className: "fa fa-globe fa-fw w3-margin-right w3-text-teal" }),
-	            "Languages"
-	          )
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          "English"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "w3-progress-container w3-round-xlarge" },
-	          React.createElement("div", { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "100%" } })
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          "Spanish"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "w3-progress-container w3-round-xlarge" },
-	          React.createElement("div", { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "55%" } })
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          "German"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "w3-progress-container w3-round-xlarge" },
-	          React.createElement("div", { className: "w3-progressbar w3-round-xlarge w3-teal", style: { width: "25%" } })
-	        ),
-	        React.createElement("br", null)
+	        "a",
+	        { href: "/" },
+	        "Regresar"
 	      )
 	    );
 	  }
@@ -26644,7 +26497,7 @@
 	        'div',
 	        { className: 'w3-threequarter w3-container center' },
 	        React.createElement(
-	          'h4',
+	          'h1',
 	          null,
 	          'Scorecard Nuevas Soluciones Tienda'
 	        )
@@ -26658,24 +26511,24 @@
 	          React.createElement(
 	            'li',
 	            { className: 'w3-padding-16' },
-	            React.createElement('img', { src: './images/person.png', className: 'w3-left w3-circle w3-margin-right', style: { width: "60px" } }),
+	            React.createElement('img', { src: "./images/" + this.props.avatar + ".png", className: 'w3-left w3-circle w3-margin-right', style: { width: "60px" } }),
 	            React.createElement(
 	              'span',
 	              { className: 'w3-xlarge' },
-	              'Susana Gayt\xE1n'
+	              this.props.name
 	            ),
 	            React.createElement('br', null),
 	            React.createElement(
 	              'span',
 	              null,
-	              'CPN'
+	              this.props.rol
 	            ),
 	            ' ',
 	            React.createElement(
 	              _reactRouter.Link,
-	              { 'data-toggle': 'pill', to: '/login', className: 'w3-right' },
+	              { to: '/login', className: 'w3-right', style: { cursor: "pointer" } },
 	              React.createElement('i', { className: 'fa fa-sign-in' }),
-	              'Salir'
+	              ' Salir'
 	            )
 	          )
 	        )
@@ -26700,7 +26553,7 @@
 
 	var _Tabs2 = _interopRequireDefault(_Tabs);
 
-	var _Menu = __webpack_require__(242);
+	var _Menu = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Menu\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
@@ -26721,12 +26574,13 @@
 	      null,
 	      React.createElement(
 	        'div',
-	        { className: 'w3-third' },
-	        React.createElement(_NotFound2.default, null)
+	        { className: 'w3-quarter w3-row-padding' },
+	        React.createElement(_Menu2.default, null),
+	        React.createElement('br', null)
 	      ),
 	      React.createElement(
 	        'div',
-	        { className: 'w3-twothird' },
+	        { className: 'w3-threequarter w3-row-padding' },
 	        React.createElement(_Tabs2.default, null)
 	      )
 	    );
@@ -26739,90 +26593,97 @@
 /* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+
+	var _reactRouter = __webpack_require__(179);
 
 	var React = __webpack_require__(1);
 
+
 	var Login = React.createClass({
-	  displayName: "Login",
+	  displayName: 'Login',
 	  render: function render() {
 	    return React.createElement(
-	      "div",
+	      'div',
 	      null,
 	      React.createElement(
-	        "div",
-	        { id: "main_login", className: "container-fluid" },
+	        'div',
+	        { id: 'main_login', className: 'container-fluid' },
 	        React.createElement(
-	          "div",
-	          { id: "topForm", className: "w3-card-4 w3-margin" },
+	          'div',
+	          { id: 'topForm', className: 'w3-card-4 w3-margin' },
 	          React.createElement(
-	            "div",
-	            { id: "login_form", className: "parallelogram col s12 w3-col w3-card-2 w3-container w3-padding-xxlarge" },
+	            'div',
+	            { id: 'login_form', className: 'parallelogram col s12 w3-col w3-card-2 w3-container w3-padding-xxlarge' },
 	            React.createElement(
-	              "div",
+	              'div',
 	              null,
 	              React.createElement(
-	                "div",
-	                { className: "col s12 center" },
-	                React.createElement("img", { src: "../images/logo_femco.png", id: "img_cf15_0", alt: "FEMSA Comercio", className: "w3-image" })
+	                'div',
+	                { className: 'col s12 center' },
+	                React.createElement('img', { src: '../images/logo_femco.png', id: 'img_cf15_0', alt: 'FEMSA Comercio', className: 'w3-image' })
 	              )
 	            ),
 	            React.createElement(
-	              "div",
-	              { className: "row" },
+	              'div',
+	              { className: 'row' },
 	              React.createElement(
-	                "div",
-	                { className: "input-field col s12" },
+	                'div',
+	                { className: 'input-field col s12' },
 	                React.createElement(
-	                  "i",
-	                  { className: "material-icons prefix" },
-	                  "account_circle"
+	                  'i',
+	                  { className: 'material-icons prefix' },
+	                  'account_circle'
 	                ),
-	                React.createElement("input", { id: "name", name: "usuario", type: "number", min: "0", className: "validate", required: "", "aria-required": "true" }),
+	                React.createElement('input', { id: 'name', name: 'usuario', type: 'number', min: '0', className: 'validate', required: '', 'aria-required': 'true' }),
 	                React.createElement(
-	                  "label",
-	                  { htmlFor: "name" },
-	                  "N\xFAmero de Empleado"
+	                  'label',
+	                  { htmlFor: 'name' },
+	                  'N\xFAmero de Empleado'
 	                )
 	              )
 	            ),
 	            React.createElement(
-	              "div",
-	              { className: "row" },
+	              'div',
+	              { className: 'row' },
 	              React.createElement(
-	                "div",
-	                { className: "input-field col s12" },
+	                'div',
+	                { className: 'input-field col s12' },
 	                React.createElement(
-	                  "i",
-	                  { className: "material-icons prefix" },
-	                  "lock_outline"
+	                  'i',
+	                  { className: 'material-icons prefix' },
+	                  'lock_outline'
 	                ),
-	                React.createElement("input", { id: "password2", name: "password", type: "password", className: "validate", required: "", "aria-required": "true" }),
+	                React.createElement('input', { id: 'password2', name: 'password', type: 'password', className: 'validate', required: '', 'aria-required': 'true' }),
 	                React.createElement(
-	                  "label",
-	                  { htmlFor: "password2" },
-	                  "Password"
+	                  'label',
+	                  { htmlFor: 'password2' },
+	                  'Password'
 	                )
 	              )
 	            ),
 	            React.createElement(
-	              "div",
-	              { className: "row" },
+	              'div',
+	              { className: 'row' },
 	              React.createElement(
-	                "div",
-	                { className: "input-field col s12" },
+	                'div',
+	                { className: 'input-field col s12' },
 	                React.createElement(
-	                  "button",
-	                  { href: "#", className: "w3-btn w3-round", id: "button_cf15_0" },
-	                  "Entrar"
+	                  'button',
+	                  { href: '/dashboard', className: 'w3-btn w3-round', id: 'button_cf15_0' },
+	                  React.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/dashboard', style: { color: "#ffffff" } },
+	                    'Entrar'
+	                  )
 	                )
 	              )
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { id: "login_img", className: "w3-rest w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge" },
-	            React.createElement("img", { src: "../images/front.png", className: "w3-round w3-hide-small w3-hide-medium w3-image" })
+	            'div',
+	            { id: 'login_img', className: 'w3-rest w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge' },
+	            React.createElement('img', { src: '../images/front.png', className: 'w3-round w3-hide-small w3-hide-medium w3-image' })
 	          )
 	        )
 	      )
@@ -26886,7 +26747,7 @@
 
 	var _FormRH2 = _interopRequireDefault(_FormRH);
 
-	var _FormSTTI = __webpack_require__(241);
+	var _FormSTTI = __webpack_require__(246);
 
 	var _FormSTTI2 = _interopRequireDefault(_FormSTTI);
 
@@ -26908,7 +26769,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'w3-example' },
+	      { className: 'w3-container w3-card-2 w3-white w3-margin-bottom' },
 	      React.createElement('br', null),
 	      React.createElement(
 	        'ul',
@@ -26930,7 +26791,7 @@
 	          React.createElement(
 	            'a',
 	            { 'data-toggle': 'pill', href: '#menu1' },
-	            React.createElement('i', { className: 'fa fa-search' }),
+	            React.createElement('i', { className: 'fa fa-legal' }),
 	            ' ',
 	            this.state.menu1
 	          )
@@ -26941,7 +26802,7 @@
 	          React.createElement(
 	            'a',
 	            { 'data-toggle': 'pill', href: '#menu2' },
-	            React.createElement('i', { className: 'fa fa-envelope' }),
+	            React.createElement('i', { className: 'fa fa-star' }),
 	            ' ',
 	            this.state.menu2
 	          )
@@ -26953,46 +26814,25 @@
 	        React.createElement(
 	          'div',
 	          { id: 'home', className: 'tab-pane fade in active' },
-	          React.createElement(
-	            'h3',
-	            null,
-	            this.state.menuHome
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'Informaci\xF3n general de los kpis'
-	          ),
+	          React.createElement('br', null),
 	          React.createElement(_Kpi2.default, null)
 	        ),
 	        React.createElement(
 	          'div',
 	          { id: 'menu1', className: 'tab-pane fade' },
-	          React.createElement(
-	            'h3',
-	            null,
-	            this.state.menu1
-	          ),
+	          React.createElement('br', null),
 	          React.createElement(_FormSTTI2.default, null)
 	        ),
 	        React.createElement(
 	          'div',
 	          { id: 'menu2', className: 'tab-pane fade' },
-	          React.createElement(
-	            'h3',
-	            null,
-	            this.state.menu2
-	          ),
+	          React.createElement('br', null),
 	          React.createElement(_FormRH2.default, null)
 	        ),
 	        React.createElement(
 	          'div',
 	          { id: 'menu3', className: 'tab-pane fade' },
-	          React.createElement(
-	            'h3',
-	            null,
-	            this.state.menuExit
-	          )
+	          React.createElement('br', null)
 	        )
 	      )
 	    );
@@ -27023,22 +26863,212 @@
 	      'div',
 	      null,
 	      React.createElement(
-	        'svg',
-	        { width: '400', height: '450' },
+	        'p',
+	        { className: 'w3-large' },
 	        React.createElement(
-	          'defs',
+	          'b',
 	          null,
+	          React.createElement('i', { className: 'fa fa-area-chart fa-fw w3-margin-right w3-text-teal' }),
+	          'Salud de Proyectos'
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Proyecto 1'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge w3-small' },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "90%" } },
 	          React.createElement(
-	            'pattern',
-	            { id: 'image', x: '0%', y: '0%', height: '100%', width: '100%', viewBox: '0 0 512 512' },
-	            React.createElement('image', { x: '0', y: '0', width: '512', height: '512', src: '../images/person.png' })
+	            'div',
+	            { className: 'w3-center w3-text-white' },
+	            '90%'
 	          )
-	        ),
-	        React.createElement('circle', { className: 'uno', r: '100', cx: '200', cy: '225' }),
-	        React.createElement('circle', { className: 'dos', r: '100', cx: '200', cy: '225' }),
-	        React.createElement('circle', { className: 'tres', r: '100', cx: '200', cy: '225' }),
-	        React.createElement('circle', { className: 'cuatro', r: '100', cx: '200', cy: '225' })
-	      )
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Proyecto 2'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge w3-small' },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "80%" } },
+	          React.createElement(
+	            'div',
+	            { className: 'w3-center w3-text-white' },
+	            '80%'
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Proyecto 3'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge w3-small' },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "75%" } },
+	          React.createElement(
+	            'div',
+	            { className: 'w3-center w3-text-white' },
+	            '75%'
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Proyecto 4'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge w3-small' },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "50%" } },
+	          React.createElement(
+	            'div',
+	            { className: 'w3-center w3-text-white' },
+	            '50%'
+	          )
+	        )
+	      ),
+	      React.createElement('br', null),
+	      React.createElement(
+	        'p',
+	        { className: 'w3-large w3-text-theme' },
+	        React.createElement(
+	          'b',
+	          null,
+	          React.createElement('i', { className: 'fa fa-legal fa-fw w3-margin-right w3-text-teal' }),
+	          'STTI'
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'DAN'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge' },
+	        React.createElement('div', { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "100%" } })
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'An\xE1lisis'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge' },
+	        React.createElement('div', { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "55%" } })
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Cotizaci\xF3n'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge' },
+	        React.createElement('div', { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "25%" } })
+	      ),
+	      React.createElement('br', null),
+	      React.createElement(
+	        'p',
+	        { className: 'w3-large' },
+	        React.createElement(
+	          'b',
+	          null,
+	          React.createElement('i', { className: 'fa fa-star fa-fw w3-margin-right w3-text-teal' }),
+	          'RH'
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Adopta una tienda'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge w3-small' },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "90%" } },
+	          React.createElement(
+	            'div',
+	            { className: 'w3-center w3-text-white' },
+	            '90%'
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'ADES'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge w3-small' },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "80%" } },
+	          React.createElement(
+	            'div',
+	            { className: 'w3-center w3-text-white' },
+	            '80%'
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'TOPS'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge w3-small' },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "75%" } },
+	          React.createElement(
+	            'div',
+	            { className: 'w3-center w3-text-white' },
+	            '75%'
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'RV'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'w3-progress-container w3-round-xlarge w3-small' },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "50%" } },
+	          React.createElement(
+	            'div',
+	            { className: 'w3-center w3-text-white' },
+	            '50%'
+	          )
+	        )
+	      ),
+	      React.createElement('br', null)
 	    );
 	  }
 	});
@@ -27049,77 +27079,160 @@
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+
+	var _Ades = __webpack_require__(241);
+
+	var _Ades2 = _interopRequireDefault(_Ades);
+
+	var _Adopta = __webpack_require__(242);
+
+	var _Adopta2 = _interopRequireDefault(_Adopta);
+
+	var _Procapet = __webpack_require__(243);
+
+	var _Procapet2 = _interopRequireDefault(_Procapet);
+
+	var _RevisionVertical = __webpack_require__(244);
+
+	var _RevisionVertical2 = _interopRequireDefault(_RevisionVertical);
+
+	var _Tops = __webpack_require__(245);
+
+	var _Tops2 = _interopRequireDefault(_Tops);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var React = __webpack_require__(1);
 
+
 	var FormRH = React.createClass({
-	  displayName: "FormRH",
+	  displayName: 'FormRH',
+
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      showAdes: false,
+	      showAdopta: false,
+	      showProcapet: false,
+	      showRV: false,
+	      showTops: false
+	    };
+	  },
+
+	  showAdes: function showAdes() {
+	    this.setState({
+	      showAdes: true,
+	      showAdopta: false,
+	      showProcapet: false,
+	      showRV: false,
+	      showTops: false
+	    });
+	  },
+	  showAdopta: function showAdopta() {
+	    this.setState({
+	      showAdes: false,
+	      showAdopta: true,
+	      showProcapet: false,
+	      showRV: false,
+	      showTops: false
+	    });
+	  },
+	  showProcapet: function showProcapet() {
+	    this.setState({
+	      showAdes: false,
+	      showAdopta: false,
+	      showProcapet: true,
+	      showRV: false,
+	      showTops: false
+	    });
+	  },
+	  showRV: function showRV() {
+	    this.setState({
+	      showAdes: false,
+	      showAdopta: false,
+	      showProcapet: false,
+	      showRV: true,
+	      showTops: false
+	    });
+	  },
+	  showTops: function showTops() {
+	    this.setState({
+	      showAdes: false,
+	      showAdopta: false,
+	      showProcapet: false,
+	      showRV: false,
+	      showTops: true
+	    });
+	  },
+
 	  render: function render() {
+
 	    return React.createElement(
-	      "div",
+	      'div',
 	      null,
 	      React.createElement(
-	        "form",
-	        { className: "form-horizontal" },
+	        'nav',
+	        { className: 'w3-sidenav w3-gray w3-card-2', style: { width: "180px", height: "575px" } },
+	        React.createElement('div', { className: 'w3-container' }),
 	        React.createElement(
-	          "div",
-	          { className: "form-group" },
-	          React.createElement(
-	            "label",
-	            { className: "control-label col-sm-2", htmlFor: "email" },
-	            "Email:"
-	          ),
-	          React.createElement(
-	            "div",
-	            { className: "col-sm-10" },
-	            React.createElement("input", { type: "email", className: "form-control", id: "email", placeholder: "Enter email" })
-	          )
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showAdes },
+	          'Agenda de Desarrollo'
 	        ),
 	        React.createElement(
-	          "div",
-	          { className: "form-group" },
-	          React.createElement(
-	            "label",
-	            { className: "control-label col-sm-2", htmlFor: "pwd" },
-	            "Password:"
-	          ),
-	          React.createElement(
-	            "div",
-	            { className: "col-sm-10" },
-	            React.createElement("input", { type: "password", className: "form-control", id: "pwd", placeholder: "Enter password" })
-	          )
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showAdopta },
+	          'Adopta una Tienda'
 	        ),
 	        React.createElement(
-	          "div",
-	          { className: "form-group" },
-	          React.createElement(
-	            "div",
-	            { className: "col-sm-offset-2 col-sm-10" },
-	            React.createElement(
-	              "div",
-	              { className: "checkbox" },
-	              React.createElement(
-	                "label",
-	                null,
-	                React.createElement("input", { type: "checkbox" }),
-	                " Remember me"
-	              )
-	            )
-	          )
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showProcapet },
+	          'Procapet'
 	        ),
 	        React.createElement(
-	          "div",
-	          { className: "form-group" },
-	          React.createElement(
-	            "div",
-	            { className: "col-sm-offset-2 col-sm-10" },
-	            React.createElement(
-	              "button",
-	              { type: "submit", className: "btn btn-default" },
-	              "Guardar"
-	            )
-	          )
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showRV },
+	          'Revisi\xF3n Vertical'
+	        ),
+	        React.createElement(
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showTops },
+	          'Juntas TOPS'
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { style: { marginLeft: "180px", height: "575px" } },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-padding' },
+	          'Informaci\xF3n de Scorecards'
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'Ades', className: 'w3-container w3-animate-opacity', style: { display: this.state.showAdes ? 'block' : 'none' } },
+	          React.createElement(_Ades2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'Adopta', className: 'w3-container w3-animate-opacity', style: { display: this.state.showAdopta ? 'block' : 'none' } },
+	          React.createElement(_Adopta2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'Procapet', className: 'w3-container w3-animate-zoom', style: { display: this.state.showProcapet ? 'block' : 'none' } },
+	          React.createElement(_Procapet2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'RevisionVertical', className: 'w3-container w3-animate-left', style: { display: this.state.showRV ? 'block' : 'none' } },
+	          React.createElement(_RevisionVertical2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'Tops', className: 'w3-container w3-animate-zoom', style: { display: this.state.showTops ? 'block' : 'none' } },
+	          React.createElement(_Tops2.default, null)
 	        )
 	      )
 	    );
@@ -27136,73 +27249,1464 @@
 
 	var React = __webpack_require__(1);
 
-	var FormSTTI = React.createClass({
-	  displayName: "FormSTTI",
+	var Ades = React.createClass({
+	  displayName: "Ades",
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      semestre1AdesSelected: true,
+	      semestre2AdesSelected: false
+	    };
+	  },
+
+	  handleChange: function handleChange(e) {
+	    var selected = false;
+
+	    if (e.currentTarget.id === "semestre1") {
+	      selected = true;
+	    } else {
+	      selected = false;
+	    }
+	    this.setState({
+	      semestre1AdesSelected: selected,
+	      semestre2AdesSelected: !selected
+
+	    }, function () {
+	      console.log(this.state);
+	    }.bind(this));
+	  },
+
 	  render: function render() {
 	    return React.createElement(
 	      "div",
 	      null,
 	      React.createElement(
-	        "form",
-	        { className: "form-horizontal" },
+	        "div",
+	        { className: "w3-container" },
 	        React.createElement(
 	          "div",
-	          { className: "form-group" },
-	          React.createElement(
-	            "label",
-	            { className: "control-label col-sm-2", htmlFor: "email" },
-	            "Email:"
-	          ),
+	          { className: "w3-row" },
 	          React.createElement(
 	            "div",
-	            { className: "col-sm-10" },
-	            React.createElement("input", { type: "email", className: "form-control", id: "email", placeholder: "Enter email" })
-	          )
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "form-group" },
-	          React.createElement(
-	            "label",
-	            { className: "control-label col-sm-2", htmlFor: "pwd" },
-	            "Password:"
-	          ),
-	          React.createElement(
-	            "div",
-	            { className: "col-sm-10" },
-	            React.createElement("input", { type: "password", className: "form-control", id: "pwd", placeholder: "Enter password" })
-	          )
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "form-group" },
-	          React.createElement(
-	            "div",
-	            { className: "col-sm-offset-2 col-sm-10" },
+	            { className: "w3-half" },
 	            React.createElement(
-	              "div",
-	              { className: "checkbox" },
+	              "h4",
+	              null,
+	              "Agenda de Desarrollo"
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "w3-half w3-right-0" },
+	            React.createElement("input", { id: "semestre1", className: "w3-radio", type: "radio", name: "ades_rdo", onChange: this.handleChange, defaultChecked: true }),
+	            React.createElement(
+	              "label",
+	              { className: "w3-validate" },
+	              " 1er. Semestre"
+	            ),
+	            React.createElement("input", { id: "semestre2", className: "w3-radio", type: "radio", name: "ades_rdo", onChange: this.handleChange }),
+	            React.createElement(
+	              "label",
+	              { className: "w3-validate" },
+	              " 2do. Semestre"
+	            )
+	          )
+	        ),
+	        React.createElement("br", null),
+	        React.createElement(
+	          "table",
+	          { id: "semestre1_tbl", className: "w3-table w3-striped w3-bordered w3-responsive w3-small w3-card",
+	            style: { display: this.state.semestre1AdesSelected ? 'block' : 'none' } },
+	          React.createElement(
+	            "thead",
+	            null,
+	            React.createElement(
+	              "tr",
+	              null,
 	              React.createElement(
-	                "label",
+	                "th",
 	                null,
-	                React.createElement("input", { type: "checkbox" }),
-	                " Remember me"
+	                "Mes"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "% Planeado"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "% Completo"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Estatus"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Evidencia"
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            "tbody",
+	            null,
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Enero"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Febrero"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Marzo"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Abril"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Mayo"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Junio"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
 	              )
 	            )
 	          )
 	        ),
 	        React.createElement(
-	          "div",
-	          { className: "form-group" },
+	          "table",
+	          { id: "semestre2_tbl", className: "w3-table w3-striped w3-bordered w3-responsive w3-tiny w3-card",
+	            style: { display: this.state.semestre1AdesSelected ? 'none' : 'block' } },
 	          React.createElement(
-	            "div",
-	            { className: "col-sm-offset-2 col-sm-10" },
+	            "thead",
+	            null,
 	            React.createElement(
-	              "button",
-	              { type: "submit", className: "btn btn-default" },
-	              "Guardar"
+	              "tr",
+	              null,
+	              React.createElement(
+	                "th",
+	                null,
+	                " Mes "
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "% Planeado"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "% Completo"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Estatus"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Evidencia"
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            "tbody",
+	            null,
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Julio"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Agosto"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Septiembre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Octubre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Noviembre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Diciembre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "text" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal fa-fw w3-margin-right w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
 	            )
 	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Ades;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var Adopta = React.createClass({
+	  displayName: "Adopta",
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "h4",
+	        null,
+	        "Adopta una Tienda"
+	      ),
+	      React.createElement(
+	        "div",
+	        { style: { marginRight: "25%" } },
+	        React.createElement(
+	          "form",
+	          { className: "w3-container" },
+	          React.createElement(
+	            "label",
+	            { className: "w3-label w3-text-blue" },
+	            React.createElement(
+	              "b",
+	              null,
+	              "Usuario"
+	            )
+	          ),
+	          React.createElement("input", { className: "w3-input w3-border", type: "text" }),
+	          React.createElement(
+	            "label",
+	            { className: "w3-label w3-text-blue" },
+	            React.createElement(
+	              "b",
+	              null,
+	              "Contrase\xF1a"
+	            )
+	          ),
+	          React.createElement("input", { className: "w3-input w3-border", type: "text" }),
+	          React.createElement(
+	            "button",
+	            { className: "w3-btn w3-blue" },
+	            "Entrar"
+	          )
+	        ),
+	        React.createElement("br", null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Adopta;
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var Procapet = React.createClass({
+	  displayName: "Procapet",
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "h4",
+	        null,
+	        "Procapet"
+	      ),
+	      React.createElement(
+	        "div",
+	        { style: { marginRight: "25%" } },
+	        React.createElement(
+	          "form",
+	          { className: "w3-container" },
+	          React.createElement(
+	            "label",
+	            { className: "w3-label w3-text-blue" },
+	            React.createElement(
+	              "b",
+	              null,
+	              "Usuario"
+	            )
+	          ),
+	          React.createElement("input", { className: "w3-input w3-border", type: "text" }),
+	          React.createElement(
+	            "label",
+	            { className: "w3-label w3-text-blue" },
+	            React.createElement(
+	              "b",
+	              null,
+	              "Contrase\xF1a"
+	            )
+	          ),
+	          React.createElement("input", { className: "w3-input w3-border", type: "text" }),
+	          React.createElement(
+	            "button",
+	            { className: "w3-btn w3-blue" },
+	            "Entrar"
+	          )
+	        ),
+	        React.createElement("br", null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Procapet;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var RevisionVertical = React.createClass({
+	  displayName: "RevisionVertical",
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      isChecked: true
+	    };
+	  },
+	  toggleChange: function toggleChange() {
+	    this.setState({
+	      isChecked: !this.state.isChecked // flip boolean value
+	    }, function () {
+	      console.log(this.state);
+	    }.bind(this));
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "div",
+	        { className: "w3-container" },
+	        React.createElement(
+	          "h4",
+	          null,
+	          "Revisi\xF3n Vertical"
+	        ),
+	        React.createElement(
+	          "table",
+	          { className: "w3-table w3-striped w3-bordered w3-responsive w3-small w3-card" },
+	          React.createElement(
+	            "tbody",
+	            null,
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "th",
+	                null,
+	                "Estatus"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Evidencia"
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-check", type: "checkbox", checked: this.state.isChecked, onChange: this.toggleChange }),
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " 1er. Trimestre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-check", type: "checkbox" }),
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " 2do. Trimestre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-check", type: "checkbox" }),
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " 3er. Trimestre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-check", type: "checkbox" }),
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " 4to. Trimestre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            )
+	          )
+	        )
+	      ),
+	      React.createElement("br", null)
+	    );
+	  }
+	});
+
+	module.exports = RevisionVertical;
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var Tops = React.createClass({
+	  displayName: "Tops",
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      semestre1TopSelected: true,
+	      semestre2TopSelected: false
+	    };
+	  },
+
+	  handleChange: function handleChange(e) {
+	    var selected = false;
+
+	    if (e.currentTarget.id === "semestre1") {
+	      selected = true;
+	    } else {
+	      selected = false;
+	    }
+	    this.setState({
+	      semestre1TopSelected: selected,
+	      semestre2TopSelected: !selected
+
+	    }, function () {
+	      console.log(this.state);
+	    }.bind(this));
+	  },
+
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "div",
+	        { className: "w3-container" },
+	        React.createElement(
+	          "div",
+	          { className: "w3-row" },
+	          React.createElement(
+	            "div",
+	            { className: "w3-half" },
+	            React.createElement(
+	              "h4",
+	              null,
+	              "Juntas TOPS"
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "w3-half w3-right-0" },
+	            React.createElement("input", { id: "semestre1", className: "w3-radio", type: "radio", name: "tops_rdo", onChange: this.handleChange, defaultChecked: true }),
+	            React.createElement(
+	              "label",
+	              { className: "w3-validate" },
+	              " 1er. Semestre"
+	            ),
+	            React.createElement("input", { id: "semestre2", className: "w3-radio", type: "radio", name: "tops_rdo", onChange: this.handleChange }),
+	            React.createElement(
+	              "label",
+	              { className: "w3-validate" },
+	              " 2do. Semestre"
+	            )
+	          )
+	        ),
+	        React.createElement("br", null),
+	        React.createElement(
+	          "table",
+	          { id: "semestre1_tbl", className: "w3-table w3-striped w3-bordered w3-responsive w3-small w3-card",
+	            style: { display: this.state.semestre1TopSelected ? 'block' : 'none' } },
+	          React.createElement(
+	            "thead",
+	            null,
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "th",
+	                null,
+	                "Mes"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Fecha Programada"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Estatus"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Evidencia"
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            "tbody",
+	            null,
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Enero"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Febrero"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Marzo"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Abril"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-green" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Mayo"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-yellow" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Junio"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-red" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "table",
+	          { id: "semestre2_tbl", className: "w3-table w3-striped w3-bordered w3-responsive w3-small w3-card",
+	            style: { display: this.state.semestre1TopSelected ? 'none' : 'block' } },
+	          React.createElement(
+	            "thead",
+	            null,
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "th",
+	                null,
+	                "Mes"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Fecha Programada"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Estatus"
+	              ),
+	              React.createElement(
+	                "th",
+	                null,
+	                "Evidencia"
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            "tbody",
+	            null,
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Julio"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-yellow" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Agosto"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-yellow" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Septiembre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-yellow" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Octubre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-yellow" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Noviembre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-yellow" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            ),
+	            React.createElement(
+	              "tr",
+	              null,
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement(
+	                  "label",
+	                  { className: "w3-validate" },
+	                  " Diciembre"
+	                )
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "date" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("i", { className: "fa fa-signal w3-large w3-text-yellow" })
+	              ),
+	              React.createElement(
+	                "td",
+	                null,
+	                React.createElement("input", { className: "w3-input", type: "file" })
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Tops;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _Ades = __webpack_require__(241);
+
+	var _Ades2 = _interopRequireDefault(_Ades);
+
+	var _Adopta = __webpack_require__(242);
+
+	var _Adopta2 = _interopRequireDefault(_Adopta);
+
+	var _Procapet = __webpack_require__(243);
+
+	var _Procapet2 = _interopRequireDefault(_Procapet);
+
+	var _RevisionVertical = __webpack_require__(244);
+
+	var _RevisionVertical2 = _interopRequireDefault(_RevisionVertical);
+
+	var _Tops = __webpack_require__(245);
+
+	var _Tops2 = _interopRequireDefault(_Tops);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var React = __webpack_require__(1);
+
+
+	var FormSTTI = React.createClass({
+	  displayName: 'FormSTTI',
+
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      showAdes: false,
+	      showAdopta: false,
+	      showProcapet: false,
+	      showRV: false,
+	      showTops: false,
+	      display: "none"
+	    };
+	  },
+
+	  showAdes: function showAdes() {
+	    this.setState({
+	      showAdes: true,
+	      showAdopta: false,
+	      showProcapet: false,
+	      showRV: false,
+	      showTops: false
+	    });
+	  },
+	  showAdopta: function showAdopta() {
+	    this.setState({
+	      showAdes: false,
+	      showAdopta: true,
+	      showProcapet: false,
+	      showRV: false,
+	      showTops: false
+	    });
+	  },
+	  showProcapet: function showProcapet() {
+	    this.setState({
+	      showAdes: false,
+	      showAdopta: false,
+	      showProcapet: true,
+	      showRV: false,
+	      showTops: false
+	    });
+	  },
+	  showRV: function showRV() {
+	    this.setState({
+	      showAdes: false,
+	      showAdopta: false,
+	      showProcapet: false,
+	      showRV: true,
+	      showTops: false
+	    });
+	  },
+	  showTops: function showTops() {
+	    this.setState({
+	      showAdes: false,
+	      showAdopta: false,
+	      showProcapet: false,
+	      showRV: false,
+	      showTops: true
+	    });
+	  },
+
+	  render: function render() {
+
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'nav',
+	        { className: 'w3-sidenav w3-gray w3-card-2', style: { width: "180px", height: "550px" } },
+	        React.createElement('div', { className: 'w3-container' }),
+	        React.createElement(
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showAdes },
+	          'Agenda de Desarrollo'
+	        ),
+	        React.createElement(
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showAdopta },
+	          'Adopta una Tienda'
+	        ),
+	        React.createElement(
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showProcapet },
+	          'Procapet'
+	        ),
+	        React.createElement(
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showRV },
+	          'Revisi\xF3n Vertical'
+	        ),
+	        React.createElement(
+	          'a',
+	          { href: 'javascript:void(0)', className: 'tablink', onClick: this.showTops },
+	          'Juntas TOPS'
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { style: { marginLeft: "180px", height: "550px" } },
+	        React.createElement(
+	          'div',
+	          { className: 'w3-padding' },
+	          'Informaci\xF3n de Scorecards'
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'Ades', className: 'w3-container w3-animate-opacity', style: { display: this.state.showAdes ? 'block' : 'none' } },
+	          React.createElement(_Ades2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'Adopta', className: 'w3-container w3-animate-opacity', style: { display: this.state.showAdopta ? 'block' : 'none' } },
+	          React.createElement(_Adopta2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'Procapet', className: 'w3-container w3-animate-zoom', style: { display: this.state.showProcapet ? 'block' : 'none' } },
+	          React.createElement(_Procapet2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'RevisionVertical', className: 'w3-container w3-animate-left', style: { display: this.state.showRV ? 'block' : 'none' } },
+	          React.createElement(_RevisionVertical2.default, null)
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'Tops', className: 'w3-container w3-animate-zoom', style: { display: this.state.showTops ? 'block' : 'none' } },
+	          React.createElement(_Tops2.default, null)
 	        )
 	      )
 	    );
@@ -27212,206 +28716,8 @@
 	module.exports = FormSTTI;
 
 /***/ },
-/* 242 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _reactRouter = __webpack_require__(179);
-
-	var React = __webpack_require__(1);
-
-
-	var Menu = React.createClass({
-	  displayName: 'Menu',
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'w3-row' },
-	      React.createElement('br', null),
-	      React.createElement('br', null),
-	      React.createElement(
-	        'div',
-	        null,
-	        React.createElement(
-	          'i',
-	          { className: 'material-icons' },
-	          'lightbulb_outline'
-	        ),
-	        React.createElement(
-	          'a',
-	          { 'data-toggle': 'collapse', 'data-target': '#estrategico', style: { color: "gray", cursor: "pointer" }, 'aria-expanded': 'true' },
-	          'Equipo estrat\xE9gico'
-	        ),
-	        React.createElement(
-	          'div',
-	          { id: 'estrategico', className: 'collapse in' },
-	          React.createElement(
-	            'div',
-	            { style: { marginLeft: 50 } },
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Nuevas Soluciones Tienda'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Backoffice'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Centro de Competencias'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Soporte'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Infraestructura'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Sistema de Trabajo'
-	            ),
-	            React.createElement('br', null)
-	          )
-	        )
-	      ),
-	      React.createElement(
-	        'div',
-	        { style: { clear: "both" } },
-	        React.createElement(
-	          'i',
-	          { className: 'material-icons' },
-	          'people'
-	        ),
-	        React.createElement(
-	          'a',
-	          { 'data-toggle': 'collapse', 'data-target': '#tactico', style: { color: "gray", cursor: "pointer" } },
-	          'Equipo t\xE1ctico'
-	        ),
-	        React.createElement(
-	          'div',
-	          { id: 'tactico', className: 'collapse' },
-	          React.createElement(
-	            'div',
-	            { style: { marginLeft: 50 } },
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Comercial'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Comercial Servicios'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Operaciones'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Operaciones Procesos'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Responsable de Desarrollo xPos'
-	            ),
-	            React.createElement('br', null)
-	          )
-	        )
-	      ),
-	      React.createElement(
-	        'div',
-	        { style: { clear: "both" } },
-	        React.createElement(
-	          'i',
-	          { className: 'material-icons' },
-	          'settings'
-	        ),
-	        React.createElement(
-	          'a',
-	          { 'data-toggle': 'collapse', 'data-target': '#colab', style: { color: "gray", cursor: "pointer" } },
-	          'Equipo Operativo'
-	        ),
-	        React.createElement(
-	          'div',
-	          { id: 'colab', className: 'collapse' },
-	          React.createElement(
-	            'div',
-	            { style: { marginLeft: 50 } },
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Francisco Torres'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Elma Ayala'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Arturo Viveros'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Felix G\xE1lvez'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Blanca Rueda'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Sofir Villarreal'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              'Sa\xFAl Wade'
-	            ),
-	            React.createElement('br', null)
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-
-	module.exports = Menu;
-
-/***/ },
-/* 243 */
+/* 247 */,
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

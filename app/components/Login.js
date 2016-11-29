@@ -6,10 +6,11 @@ var Login = React.createClass({
     render(){
       return (
         <div>
+
           <div id="main_login"  className="container-fluid">
             <div id="topForm" className="w3-card-4 w3-margin" >
-              <div id="login_form" className="parallelogram col s12 w3-col w3-card-2 w3-container w3-padding-xxlarge" >
 
+              <div id="login_form" className="parallelogram col s12 w3-col w3-card-2 w3-container w3-padding-xxlarge" >
               <div>
                 <div className="col s12 center">
                 <img src="../images/logo_femco.png" id="img_cf15_0" alt="FEMSA Comercio" className="w3-image"/>
@@ -32,18 +33,22 @@ var Login = React.createClass({
         				</div>
                 <div className="row">
                   <div className="input-field col s12">
-        						<button href="/" className="w3-btn w3-round" id="button_cf15_0"><Link to="/" style={{color: "#ffffff"}}>Entrar</Link></button>
+        						<button href="/dashboard" className="w3-btn w3-round" id="button_cf15_0"><Link to="/dashboard" style={{color: "#ffffff"}}>Entrar</Link></button>
         					</div>
         				</div>
-
+                
               </div>
+
+
               <div id="login_img"  className="w3-rest w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge">
         				<img src="../images/front.png" className="w3-round w3-hide-small w3-hide-medium w3-image"/>
         			</div>
 
-
             </div>
           </div>
+
+
+
         </div>
       )
     }

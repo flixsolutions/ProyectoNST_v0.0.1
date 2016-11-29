@@ -6,14 +6,15 @@ var Header = React.createClass({
       return (
         <div className="w3-row w3-card-4">
           <div className="w3-threequarter w3-container center">
-            <h4>Scorecard Nuevas Soluciones Tienda</h4>
+            <h1>Scorecard Nuevas Soluciones Tienda</h1>
+
           </div>
           <div className="w3-rest w3-container">
             <ul className="w3-ul ">
               <li className="w3-padding-16">
-                <img src="./images/person.png" className="w3-left w3-circle w3-margin-right" style={{width:"60px"}} />
-                <span className="w3-xlarge">Susana Gaytán</span><br/>
-                <span>CPN</span> <Link to="/" className="w3-right"><i className="fa fa-sign-in"></i> Salir</Link>
+                <img src={"./images/"+this.props.avatar+".png"} className="w3-left w3-circle w3-margin-right" style={{width:"60px"}} />
+                <span className="w3-xlarge">{this.props.name}</span><br/>
+                <span>{this.props.rol}</span> <Link to="/login" className="w3-right" style={{cursor:"pointer"}}><i className="fa fa-sign-in"></i> Salir</Link>
               </li>
             </ul>
           </div>

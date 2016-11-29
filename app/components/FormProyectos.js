@@ -6,7 +6,7 @@ import RevisionVertical from './scorecards/rh/RevisionVertical'
 import Tops from './scorecards/rh/Tops'
 
 
-var FormSTTI = React.createClass({
+var FormProyectos = React.createClass({
 
   getInitialState: function() {
       return {
@@ -14,8 +14,7 @@ var FormSTTI = React.createClass({
           showAdopta: false,
           showProcapet: false,
           showRV: false,
-          showTops: false,
-          display: "none"
+          showTops: false
       };
   },
 
@@ -71,7 +70,7 @@ var FormSTTI = React.createClass({
       <div>
 
 
-        <nav className="w3-sidenav w3-gray w3-card-2" style={{width:"180px", height:"550px"}}>
+        <nav className="w3-sidenav w3-gray w3-card-2" style={{width:"180px", height:"575px"}}>
           <div className="w3-container">
           </div>
           <a href="javascript:void(0)" className="tablink" onClick={this.showAdes}>Agenda de Desarrollo</a>
@@ -81,7 +80,7 @@ var FormSTTI = React.createClass({
           <a href="javascript:void(0)" className="tablink" onClick={this.showTops}>Juntas TOPS</a>
         </nav>
 
-        <div style={{marginLeft:"180px", height:"550px"}}>
+        <div style={{marginLeft:"180px", height:"575px"}}>
         <div className="w3-padding">Información de Scorecards</div>
 
         <div id="Ades" className="w3-container w3-animate-opacity" style={{display: this.state.showAdes ? 'block' : 'none'}}>
@@ -113,4 +112,4 @@ var FormSTTI = React.createClass({
 
 });
 
-module.exports = FormSTTI;
+module.exports = FormProyectos;
