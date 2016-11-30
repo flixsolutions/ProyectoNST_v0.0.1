@@ -4,19 +4,26 @@ var Header = React.createClass({
 
     render(){
       return (
-        <div className="w3-row w3-card-4">
-          <div className="w3-threequarter w3-container center">
-            <h1>Scorecard Nuevas Soluciones Tienda</h1>
-
-          </div>
-          <div className="w3-rest w3-container">
-            <ul className="w3-ul ">
-              <li className="w3-padding-16">
-                <img src={"./images/"+this.props.avatar+".png"} className="w3-left w3-circle w3-margin-right" style={{width:"60px"}} />
-                <span className="w3-xlarge">{this.props.name}</span><br/>
-                <span>{this.props.rol}</span> <Link to="/login" className="w3-right" style={{cursor:"pointer"}}><i className="fa fa-sign-in"></i> Salir</Link>
-              </li>
-            </ul>
+        <div>
+          <div className="w3-row w3-center w3-card-4">
+            <div className="w3-quarter">
+              <img src={"./images/logo_femco.png"} style={{width:"60%"}} className="w3-margin"/>
+            </div>
+            <div className="w3-half">
+              <h2 className="w3-margin">Scorecard NST</h2>
+            </div>
+            <div className="w3-quarter">
+              <div className="w3-row">
+                <div className="w3-quarter">
+                  <img src={"./images/"+this.props.avatar+".png"} className="w3-hide-small w3-hide-medium w3-padding-16" style={{width:"80px"}} />
+                </div>
+                <div className="w3-half">
+                  <div className="w3-row"><p className="w3-hide-small w3-hide-medium w3-margin-top">{this.props.name}</p></div>
+                  <div className="w3-row"><p className="w3-hide-small w3-hide-medium">{this.props.rol}</p></div>
+                  <div className="w3-row"><Link to="/login" className="w3-right" style={{cursor:"pointer"}}><i className="fa fa-sign-in"></i> Salir</Link></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )

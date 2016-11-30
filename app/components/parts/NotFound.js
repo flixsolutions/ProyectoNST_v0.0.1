@@ -8,7 +8,6 @@ var NotFound = React.createClass({
           <h1>404... Page not found!</h1>
           <a href="/">Regresar</a>
         </div>
-
       )
     }
 

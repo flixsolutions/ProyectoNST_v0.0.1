@@ -1,0 +1,5 @@
+[{"seccion_id":2,"subSeccion_id":1,"subSeccion_nombre":"Registro DAN","subSeccion_icon":"home"},
+{"seccion_id":2,"subSeccion_id":2,"subSeccion_nombre":"Registro Cotización","subSeccion_icon":"legal"},
+{"seccion_id":2,"subSeccion_id":3,"subSeccion_nombre":"Diferencias DAN vs Cotización","subSeccion_icon":"star"},
+{"seccion_id":2,"subSeccion_id":4,"subSeccion_nombre":"Análisis","subSeccion_icon":"star"},
+{"seccion_id":2,"subSeccion_id":7,"subSeccion_nombre":"Administración","subSeccion_icon":"star"}]

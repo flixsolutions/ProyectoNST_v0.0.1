@@ -8,12 +8,11 @@ var Body = React.createClass({
 
     render(){
       return (
-        <div>
-            <div className="w3-quarter w3-row-padding">
+        <div className="w3-row w3-container">
+            <div className="w3-quarter w3-container">
               <Menu />
-              <br/>
             </div>
-            <div className="w3-threequarter w3-row-padding">
+            <div className="w3-threequarter w3-container">
               <Tabs />
             </div>
         </div>

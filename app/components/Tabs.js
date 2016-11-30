@@ -1,49 +1,69 @@
 var React = require('react');
 import { Link} from 'react-router'
 import Kpi from './Kpi'
-import FormRH from './FormRH'
-import FormSTTI from './FormSTTI'
-import FormProyectos from './FormProyectos'
+import Proyectos from './scorecards/proyectos/Proyectos'
+import TabsRH from './scorecards/rh/_TabsRH'
+import TabsSTTI from './scorecards/stti/_TabsSTTI'
 
 
 var Tabs = React.createClass({
   getInitialState(){
     return {
-      menuHome:"Inicio",
-      menu1:"STTI",
-      menu2:"RH",
-      menu3:"Salud de Proyectos",
-      menuExit:"Salir"
+      dataTabs: []
     }
   },
 
+  componentDidMount: function(){
+      this.serverRequest = $.get('./js/data/secciones.json', function(result){
+        var tempDataTabs = result;
+        this.setState({
+          dataTabs: tempDataTabs
+        });//setState
+        // console.log(this.state);
+      }.bind(this));//getdataTabs
+
+  },//componentDidMount
+
+    componentWillUnmount: function(){
+        this.serverRequest.abort();
+    },//componentDidMount
+
     render(){
+
+      var filteredDataTabs = this.state.dataTabs;
+      filteredDataTabs = filteredDataTabs.map(function(item,index){
+          return(
+           <li className={index==0?"active": null}  key={index}>
+              <a data-toggle="pill" href={"#Tab_"+index}>
+                <i className={"w3-margin-right fa fa-" + this.state.dataTabs[index].seccion_icon}></i>
+                {this.state.dataTabs[index].seccion_nombre}
+                </a>
+            </li>
+          )//return
+      }.bind(this));//filteredDataTabs
+
       return (
-        <div className="w3-container w3-card-2 w3-white w3-margin-bottom">
-          <br/>
+        <div className="w3-padding w3-white w3-card-4">
           <ul className="nav nav-pills">
-            <li className="active"><a data-toggle="pill" href="#home"><i className="fa fa-home"></i> {this.state.menuHome}</a></li>
-            <li><a data-toggle="pill" href="#menu1"><i className="fa fa-legal"></i> {this.state.menu1}</a></li>
-            <li><a data-toggle="pill" href="#menu2"><i className="fa fa-star"></i> {this.state.menu2}</a></li>
-            <li><a data-toggle="pill" href="#menu3"><i className="fa fa-star"></i> {this.state.menu3}</a></li>
+            {filteredDataTabs}
           </ul>
 
           <div className="tab-content">
-            <div id="home" className="tab-pane fade in active">
+            <div id="Tab_0" className="tab-pane fade in active">
               <br/>
               <Kpi />
             </div>
-            <div id="menu1" className="tab-pane fade">
+            <div id="Tab_1" className="tab-pane fade">
               <br/>
-              <FormSTTI />
+              <TabsSTTI />
             </div>
-            <div id="menu2" className="tab-pane fade">
+            <div id="Tab_2" className="tab-pane fade">
               <br/>
-              <FormRH />
+              <TabsRH />
             </div>
-            <div id="menu3" className="tab-pane fade">
+            <div id="Tab_3" className="tab-pane fade">
               <br/>
-              <FormProyectos />
+              <Proyectos />
             </div>
           </div>
 

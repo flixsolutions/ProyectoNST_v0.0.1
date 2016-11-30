@@ -9,11 +9,16 @@ import Kpi from './components/Kpi'
 
 var RouteHandler = Router.RouteHandler;
 
-const Container = (props) => <div>
-  <Header name="Susana Gaytan" rol="CPN" avatar="person"/>
-  <br />
-  {props.children}
-  <Footer />
+const Container = (props) => <div className="container w3-row">
+  <div className="w3-row w3-margin">
+    <Header name="Susana Gaytan" rol="CPN" avatar="person"/>
+  </div>
+  <div className="w3-row w3-margin">
+    {props.children}
+  </div>
+  <div className="w3-row w3-margin">
+    <Footer />
+  </div>
 </div>
 
 const App = () =>(
