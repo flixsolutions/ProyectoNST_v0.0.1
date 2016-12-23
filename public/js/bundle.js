@@ -21497,7 +21497,7 @@
 
 	var _Body2 = _interopRequireDefault(_Body);
 
-	var _Footer = __webpack_require__(248);
+	var _Footer = __webpack_require__(250);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -26587,7 +26587,7 @@
 
 	var _Tabs2 = _interopRequireDefault(_Tabs);
 
-	var _Menu = __webpack_require__(247);
+	var _Menu = __webpack_require__(249);
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
@@ -26776,23 +26776,15 @@
 
 	var _Kpi2 = _interopRequireDefault(_Kpi);
 
-	var _FormRH = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./FormRH\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _Proyectos = __webpack_require__(240);
 
-	var _FormRH2 = _interopRequireDefault(_FormRH);
+	var _Proyectos2 = _interopRequireDefault(_Proyectos);
 
-	var _FormSTTI = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./FormSTTI\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-	var _FormSTTI2 = _interopRequireDefault(_FormSTTI);
-
-	var _FormProyectos = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./FormProyectos\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-	var _FormProyectos2 = _interopRequireDefault(_FormProyectos);
-
-	var _TabsRH = __webpack_require__(240);
+	var _TabsRH = __webpack_require__(241);
 
 	var _TabsRH2 = _interopRequireDefault(_TabsRH);
 
-	var _TabsSTTI = __webpack_require__(246);
+	var _TabsSTTI = __webpack_require__(247);
 
 	var _TabsSTTI2 = _interopRequireDefault(_TabsSTTI);
 
@@ -26873,7 +26865,7 @@
 	          'div',
 	          { id: 'Tab_3', className: 'tab-pane fade' },
 	          React.createElement('br', null),
-	          React.createElement(_FormProyectos2.default, null)
+	          React.createElement(_Proyectos2.default, null)
 	        )
 	      )
 	    );
@@ -27138,25 +27130,43 @@
 
 	'use strict';
 
+	var React = __webpack_require__(1);
+
+	var FormProyectos = React.createClass({
+	  displayName: 'FormProyectos',
+	  render: function render() {
+
+	    return React.createElement('div', null);
+	  }
+	});
+
+	module.exports = FormProyectos;
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	var _reactRouter = __webpack_require__(179);
 
-	var _Ades = __webpack_require__(241);
+	var _Ades = __webpack_require__(242);
 
 	var _Ades2 = _interopRequireDefault(_Ades);
 
-	var _Adopta = __webpack_require__(242);
+	var _Adopta = __webpack_require__(243);
 
 	var _Adopta2 = _interopRequireDefault(_Adopta);
 
-	var _Procapet = __webpack_require__(243);
+	var _Procapet = __webpack_require__(244);
 
 	var _Procapet2 = _interopRequireDefault(_Procapet);
 
-	var _RevisionVertical = __webpack_require__(244);
+	var _RevisionVertical = __webpack_require__(245);
 
 	var _RevisionVertical2 = _interopRequireDefault(_RevisionVertical);
 
-	var _Tops = __webpack_require__(245);
+	var _Tops = __webpack_require__(246);
 
 	var _Tops2 = _interopRequireDefault(_Tops);
 
@@ -27252,7 +27262,7 @@
 	module.exports = TabsRH;
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27709,7 +27719,7 @@
 	module.exports = Ades;
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27759,7 +27769,7 @@
 	module.exports = Adopta;
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27776,7 +27786,7 @@
 	module.exports = Procapet;
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27917,7 +27927,7 @@
 	module.exports = RevisionVertical;
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28309,12 +28319,18 @@
 	module.exports = Tops;
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _reactRouter = __webpack_require__(179);
+
+	var _RegDAN = __webpack_require__(248);
+
+	var _RegDAN2 = _interopRequireDefault(_RegDAN);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var React = __webpack_require__(1);
 
@@ -28371,6 +28387,7 @@
 	        React.createElement(
 	          'div',
 	          { id: 'tabSTTI_0', className: 'tab-pane fade in active' },
+	          React.createElement(_RegDAN2.default, null),
 	          React.createElement('br', null)
 	        ),
 	        React.createElement(
@@ -28401,7 +28418,427 @@
 	module.exports = TabsSTTI;
 
 /***/ },
-/* 247 */
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var RegDAN = React.createClass({
+		displayName: "RegDAN",
+		render: function render() {
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"table",
+					{ className: "w3-table-all w3-hoverable" },
+					React.createElement(
+						"thead",
+						null,
+						React.createElement(
+							"tr",
+							null,
+							React.createElement("th", { className: "noBlank" }),
+							React.createElement("th", { className: "noBlank" }),
+							React.createElement(
+								"th",
+								null,
+								"Title"
+							),
+							React.createElement(
+								"th",
+								null,
+								"Folio de iniciativa"
+							),
+							React.createElement(
+								"th",
+								null,
+								"CPN"
+							),
+							React.createElement(
+								"th",
+								null,
+								"Analista de Negocio"
+							),
+							React.createElement(
+								"th",
+								null,
+								"Costo DAN"
+							),
+							React.createElement(
+								"th",
+								null,
+								"Duraci\xF3n Total"
+							)
+						)
+					),
+					React.createElement(
+						"tbody",
+						null,
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								null,
+								React.createElement("input", { type: "checkbox", onClick: "toggle(this)" })
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								null,
+								React.createElement("input", { type: "checkbox", name: "foo", value: "bar1" })
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								null,
+								React.createElement("input", { type: "checkbox", name: "foo", value: "bar1" })
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								null,
+								React.createElement("input", { type: "checkbox", name: "foo", value: "bar1" })
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								null,
+								React.createElement("input", { type: "checkbox", name: "foo", value: "bar1" })
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								null,
+								React.createElement("input", { type: "checkbox", name: "foo", value: "bar1" })
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								null,
+								React.createElement("input", { type: "checkbox", name: "foo", value: "bar1" })
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								null,
+								React.createElement("input", { type: "checkbox", name: "foo", value: "bar1" })
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							),
+							React.createElement(
+								"td",
+								{ className: "readwrite" },
+								"Value1"
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = RegDAN;
+
+/***/ },
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28657,7 +29094,7 @@
 	module.exports = Menu;
 
 /***/ },
-/* 248 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
