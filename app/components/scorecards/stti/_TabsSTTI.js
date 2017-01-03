@@ -1,5 +1,10 @@
 var React = require('react');
 import { Link} from 'react-router'
+import RegDAN from './RegDAN'
+import EditDAN from './EditDAN'
+import ContainerDAN from './ContainerDAN'
+import RegQuot from './RegQuot'
+import CumplimientoAnalisis from './CumplimientoAnalisis'
 
 
 var TabsSTTI = React.createClass({
@@ -46,15 +51,19 @@ var TabsSTTI = React.createClass({
 
           <div className="tab-content">
             <div id="tabSTTI_0" className="tab-pane fade in active">
+
+        <ContainerDAN/>
               <br/>
             </div>
             <div id="tabSTTI_1" className="tab-pane fade">
+            <RegQuot/>
               <br/>
             </div>
             <div id="tabSTTI_2" className="tab-pane fade">
               <br/>
             </div>
             <div id="tabSTTI_3" className="tab-pane fade">
+            <CumplimientoAnalisis/>
               <br/>
             </div>
             <div id="tabSTTI_4" className="tab-pane fade">

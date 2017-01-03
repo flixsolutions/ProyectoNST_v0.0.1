@@ -68,3 +68,16 @@ circle.cuatro {
   stroke-width: 30;
   stroke-dasharray: 0 159.08 153.08 316.16 ;
 }
+
+.noBlank {
+	whiteSpace: 'nowrap'
+}
+
+.readwrite {
+	-moz-user-modify: read-write;
+	-webkit-user-modify: read-write;
+}
+
+.floatRight {
+  float:right;
+}
