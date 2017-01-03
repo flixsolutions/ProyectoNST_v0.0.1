@@ -9,11 +9,10 @@ var Login = React.createClass({
     render(){
       return (
         <div>
-          <div className="w3-row-padding" style={{borderWidth:"2px", borderStyle:"solid", borderColor:"green"}}>
-            <div className="w3-half w3-container" style={{borderWidth:"2px", borderStyle:"solid", borderColor:"red"}}>
-              <h2>w3-half</h2>
+          <div className="w3-row-padding">
+            <div className="w3-half w3-container">
               <div id="topForm" className="w3-card-4 w3-margin col-xs-4" style={{margin: "0px auto", paddingLeft:"70px",  width: "90%", height: "470px"}}>
-                <div  id="login_form" className="w3-half  parallelogram w3-card-2 w3-center" style={{ marginTop:"10px", width: "300px", borderWidth:"2px", borderStyle:"solid"}}>
+                <div  id="login_form" className="w3-half  parallelogram w3-card-2 w3-center" style={{ marginTop:"10px", width: "300px"}}>
                   <div className="row">
                     <div className="center">
                     <img src="../images/logo_femco.png" style={{padding: "30px"}} alt="FEMSA Comercio" className="w3-image" />
@@ -22,7 +21,7 @@ var Login = React.createClass({
                   <div className="row">
                     <div className="input-field col s12">
                       <i className="material-icons prefix">account_circle</i>
-                      <input id="name" name="usuario" type="number" min="0" className="validate" required="" aria-required="true" />
+                      <input id="name" name="usuario" type="number" className="validate" required="" aria-required="true" />
                       <label htmlFor="name">No. Empleado</label>
                     </div>
                   </div>
@@ -42,9 +41,8 @@ var Login = React.createClass({
                 </div>
               </div>
             </div>
-            <div className="w3-half w3-container" style={{borderWidth:"2px", borderStyle:"solid", borderColor:"red"}} >
-              <h2>w3-half</h2>
-              <div id="login_img" style={{margin: "0px auto", width:"100%", height: "470px", borderWidth:"2px", borderStyle:"solid"}} className="w3-half w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge">
+            <div className="w3-half w3-container">
+              <div id="login_img" style={{margin: "0px auto", width:"100%", height: "470px"}} className="w3-half w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge">
                 <img src="../images/front.png"  className="w3-round w3-hide-small w3-hide-medium w3-image" />
               </div>
             </div>
