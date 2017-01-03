@@ -9,9 +9,9 @@ import Kpi from './components/Kpi'
 
 var RouteHandler = Router.RouteHandler;
 
-const Container = (props) => <div className="container w3-row">
+const Container = (props) => <div className="w3-row">
   <div className="w3-row w3-margin">
-    <Header name="Susana Gaytan" rol="CPN" avatar="person"/>
+    <Header name="Susana Gaytan" rol="CPN" avatar="avatar_susy"/>
   </div>
   <div className="w3-row w3-margin">
     {props.children}
@@ -21,7 +21,10 @@ const Container = (props) => <div className="container w3-row">
   </div>
 </div>
 
-const App = () =>(
+var App = React.createClass({
+
+    render(){
+      return (
       <Router history={hashHistory}>
         <Route path='/' component={Container}>
           <IndexRoute component={Login} />
@@ -31,6 +34,8 @@ const App = () =>(
           <Route path='*' component={NotFound} />
         </Route>
       </Router>
-  )
+  )}
 
-export default App
+});
+
+module.exports = App;

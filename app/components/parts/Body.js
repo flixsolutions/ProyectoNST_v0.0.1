@@ -10,7 +10,7 @@ var Body = React.createClass({
       return (
         <div className="w3-row w3-container">
             <div className="w3-quarter w3-container">
-              <Menu />
+              <Menu name="Susana Gaytan" rol="CPN" avatar="avatar_susy"/>
             </div>
             <div className="w3-threequarter w3-container">
               <Tabs />

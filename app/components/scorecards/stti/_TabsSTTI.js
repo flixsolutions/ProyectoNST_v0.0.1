@@ -39,7 +39,8 @@ var TabsSTTI = React.createClass({
 
       return (
         <div className="w3-padding w3-white w3-card-4">
-          <ul className="nav nav-pills">
+
+          <ul className="w3-navbar w3-card-2 w3-light-grey nav-pills">
             {filteredDataTabs}
           </ul>
 

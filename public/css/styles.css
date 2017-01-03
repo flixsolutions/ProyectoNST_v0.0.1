@@ -3,14 +3,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
    color:#000000
   }
 /*Login Component Styles*/
-#header_cf15_0{padding-left:50px; margin-top:50px;}
-#h4_cf15_0{font-weight:bold;}
-#main_login{border-top:solid; border-top-color:RGB(238,238,238); margin-top:20px; padding-left:50px;}
-#topForm{col-xs-4 margin: 0px auto; padding-left:70px; width: 1200px; height: 468px;}
-#login_form{width:400px; clear:left; margin-top:10px}
-#img_cf15_0{padding: 30px}
-#button_cf15_0{width: 100%; background-color: RGB(120,38,52)}
-#login_img{margin-left:100px; width:700px;}
+
 
 *{
   border: 0;

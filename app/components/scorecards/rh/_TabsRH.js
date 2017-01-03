@@ -35,7 +35,7 @@ var TabsRH = React.createClass({
       filteredDataTabs = filteredDataTabs.map(function(item,index){
           return(
            <li className={index==0?"active": null}  key={index}>
-              <a data-toggle="pill" href={"#tabRH_"+index}>                
+              <a data-toggle="pill" href={"#tabRH_"+index}>
                 {this.state.dataTabs[index].subSeccion_nombre}
                 </a>
             </li>
@@ -44,7 +44,8 @@ var TabsRH = React.createClass({
 
       return (
         <div className="w3-padding w3-white w3-card-4">
-          <ul className="nav nav-pills">
+
+          <ul className="w3-navbar w3-card-2 w3-light-grey nav-pills">
             {filteredDataTabs}
           </ul>
 
@@ -55,7 +56,7 @@ var TabsRH = React.createClass({
             </div>
             <div id="tabRH_1" className="tab-pane fade">
               <br/>
-              <Adopta />
+              <Adopta titulo="valor2" />
             </div>
             <div id="tabRH_2" className="tab-pane fade">
               <br/>

@@ -1,4 +1,5 @@
 var React = require('react');
+var _ = require('lodash');
 import { Link, IndexLink } from 'react-router'
 
 var Menu = React.createClass({
@@ -50,6 +51,15 @@ var Menu = React.createClass({
         this.serverRequest.abort();
     },//componentDidMount
 
+    // handleDelete:function(){
+    //   var allMenus = this.state.dataAreas;
+    //   var newMenus = _.without(allMenus, this.state.dataAreas[0]);
+    //   this.setState({
+    //     dataAreas: newMenus
+    //   });
+    //     <button className="btn btn-xs btn-danger" onClick={this.handleDelete}><span className="glyphicon glyphicon-remove"></span></button>
+    // },
+
     render(){
       var filteredAreas = this.state.dataAreas;
       filteredAreas = filteredAreas.map(function(item,index){
@@ -88,8 +98,8 @@ var Menu = React.createClass({
 
             <div className="w3-display-container w3-center">
               <div className="w3-container">
-                <img src="/images/person.png" style={{width:"80%", height:"100%"}} alt="Avatar"/>
-                <h5 className="w3-center">Susana Gaytán</h5>
+                <img src={"./images/avatars/"+this.props.avatar+".png"} style={{width:"80%", height:"100%"}} alt="Avatar"/>
+                <h5 className="w3-center">{this.props.name}</h5>
               </div>
             </div>
 
