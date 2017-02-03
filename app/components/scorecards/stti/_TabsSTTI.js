@@ -5,14 +5,15 @@ import EditDAN from './EditDAN'
 import ContainerDAN from './ContainerDAN'
 import RegQuot from './RegQuot'
 import CumplimientoAnalisis from './CumplimientoAnalisis'
+import DanCotizacion from './DanCotizacion'
 
 
 var TabsSTTI = React.createClass({
   getInitialState(){
     return {
       dataTabs: []
-    }
-  },
+    }//return
+  },//getInitialState
 
   componentDidMount: function(){
       this.serverRequest = $.get('./js/data/seccionesSTTI.json', function(result){
@@ -51,19 +52,19 @@ var TabsSTTI = React.createClass({
 
           <div className="tab-content">
             <div id="tabSTTI_0" className="tab-pane fade in active">
-
-        <ContainerDAN/>
+              <ContainerDAN/>
               <br/>
             </div>
             <div id="tabSTTI_1" className="tab-pane fade">
-            <RegQuot/>
+              <RegQuot/>
               <br/>
             </div>
             <div id="tabSTTI_2" className="tab-pane fade">
+              <DanCotizacion/>
               <br/>
             </div>
             <div id="tabSTTI_3" className="tab-pane fade">
-            <CumplimientoAnalisis/>
+              <CumplimientoAnalisis/>
               <br/>
             </div>
             <div id="tabSTTI_4" className="tab-pane fade">

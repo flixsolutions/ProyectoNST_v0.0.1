@@ -21493,7 +21493,7 @@
 
 	var _Body2 = _interopRequireDefault(_Body);
 
-	var _Footer = __webpack_require__(251);
+	var _Footer = __webpack_require__(257);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -21509,30 +21509,68 @@
 
 	var RouteHandler = _reactRouter.Router.RouteHandler;
 
-	var Container = function Container(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'container w3-row' },
-	    _react2.default.createElement(
+	// const Container = (props) => <div className="w3-row">
+	//   <div className="w3-row w3-margin">
+	//     <Header name="Susy" rol="" avatar="avatar_susy"/>
+	//   </div>
+	//   <div className="w3-row w3-margin">
+	//     {props.children}
+	//   </div>
+	//   <div className="w3-row w3-margin">
+	//     <Footer />
+	//   </div>
+	// </div>
+
+	var Container = _react2.default.createClass({
+	  displayName: 'Container',
+	  render: function render() {
+	    return _react2.default.createElement(
 	      'div',
-	      { className: 'w3-row w3-margin' },
-	      _react2.default.createElement(_Header2.default, { name: 'Susana Gaytan', rol: 'CPN', avatar: 'avatar_susy' })
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'w3-row w3-margin' },
-	      props.children
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'w3-row w3-margin' },
-	      _react2.default.createElement(_Footer2.default, null)
-	    )
-	  );
-	};
+	      { className: 'w3-row' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'w3-row w3-margin' },
+	        _react2.default.createElement(_Header2.default, { name: '', rol: '', avatar: '', validUser: this.props.isValidUser })
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'w3-row w3-margin' },
+	        this.props.children
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'w3-row w3-margin' },
+	        _react2.default.createElement(_Footer2.default, null)
+	      )
+	    );
+	  }
+	});
+
+	var LoginWrapper = _react2.default.createClass({
+	  displayName: 'LoginWrapper',
+	  getInitialState: function getInitialState() {
+	    return {
+	      isValidUser: this.props.isValidUser
+	    };
+	  },
+	  checkUser: function checkUser(user, pass) {
+	    this.setState({
+	      isValidUser: true
+	    });
+	    this.props.router.push('/dashboard');
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(_Login2.default, { checkLogin: this.checkUser });
+	  }
+	});
 
 	var App = _react2.default.createClass({
 	  displayName: 'App',
+	  getInitialState: function getInitialState() {
+	    return {
+	      isValidUser: false
+	    };
+	  },
 	  render: function render() {
 	    return _react2.default.createElement(
 	      _reactRouter.Router,
@@ -21540,14 +21578,15 @@
 	      _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/', component: Container },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _Login2.default }),
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: LoginWrapper }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/dashboard', component: _Body2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/kpi', component: _Kpi2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/login', component: LoginWrapper }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NotFound2.default })
 	      )
-	    );
-	  }
+	    ); // return
+	  } // render
+
 	});
 
 	module.exports = App;
@@ -26493,84 +26532,53 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
 	var _reactRouter = __webpack_require__(179);
 
-	var React = __webpack_require__(1);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Header = React.createClass({
+	var Header = _react2.default.createClass({
 	  displayName: 'Header',
+	  getInitialState: function getInitialState() {
+	    return {
+	      value1: "test"
+	    };
+	  },
 	  render: function render() {
-	    return React.createElement(
+	    return _react2.default.createElement(
 	      'div',
-	      null,
-	      React.createElement(
+	      { className: 'Header w3-hide-small w3-hide-medium' },
+	      _react2.default.createElement(
 	        'div',
 	        { className: 'w3-row w3-center w3-card-4 w3-white' },
-	        React.createElement(
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'w3-threequarter' },
+	          _react2.default.createElement('img', { src: "./images/FondoHeaderSinLogo.jpg", style: { width: "100%" }, className: 'w3-margin' })
+	        ),
+	        _react2.default.createElement(
 	          'div',
 	          { className: 'w3-quarter' },
-	          React.createElement('img', { src: "./images/logo_femco.png", style: { width: "60%" }, className: 'w3-margin' })
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'w3-half' },
-	          React.createElement(
-	            'h2',
-	            { className: 'w3-margin' },
-	            'Scorecard NST'
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'w3-quarter' },
-	          React.createElement(
+	          _react2.default.createElement(
 	            'div',
 	            { className: 'w3-row' },
-	            React.createElement(
-	              'div',
-	              { className: 'w3-quarter' },
-	              React.createElement('img', { src: "./images/avatars/" + this.props.avatar + ".png", className: 'w3-hide-small w3-hide-medium w3-padding-16', style: { width: "80px" } })
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'w3-half' },
-	              React.createElement(
-	                'div',
-	                { className: 'w3-row' },
-	                React.createElement(
-	                  'p',
-	                  { className: 'w3-hide-small w3-hide-medium w3-margin-top' },
-	                  this.props.name
-	                )
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'w3-row' },
-	                React.createElement(
-	                  'p',
-	                  { className: 'w3-hide-small w3-hide-medium' },
-	                  this.props.rol
-	                )
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'w3-row' },
-	                React.createElement(
-	                  _reactRouter.Link,
-	                  { to: '/login', className: 'w3-right', style: { cursor: "pointer" } },
-	                  React.createElement('i', { className: 'fa fa-sign-in' }),
-	                  ' Salir'
-	                )
-	              )
-	            )
+	            _react2.default.createElement('img', { src: "./images/logo_femco.png", style: { width: "90%" }, className: 'w3-margin' })
 	          )
 	        )
 	      )
-	    );
-	  }
+	    ); // return
+	  } // render
+
 	});
 
-	module.exports = Header;
+	exports.default = Header;
 
 /***/ },
 /* 236 */
@@ -26586,7 +26594,7 @@
 
 	var _Tabs2 = _interopRequireDefault(_Tabs);
 
-	var _Menu = __webpack_require__(248);
+	var _Menu = __webpack_require__(254);
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
@@ -26627,6 +26635,8 @@
 
 	'use strict';
 
+	var _createBrowserHistory = __webpack_require__(224);
+
 	var _reactRouter = __webpack_require__(179);
 
 	var React = __webpack_require__(1);
@@ -26634,137 +26644,88 @@
 
 	var Login = React.createClass({
 	  displayName: 'Login',
-
-	  checkLogin: function checkLogin() {},
-
+	  onSubmit: function onSubmit() {
+	    var user = this.refs.userRef.value;
+	    var password = this.refs.passwordRef.value;
+	    this.props.checkLogin(user, password);
+	  },
+	  componentDidMount: function componentDidMount() {},
+	  //componentDidMount
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'Login' },
 	      React.createElement(
 	        'div',
-	        { id: 'main_login', className: 'container-fluid' },
+	        { className: 'w3-card-2 w3-row w3-padding-large' },
 	        React.createElement(
 	          'div',
-	          { id: 'topForm', className: 'w3-card-4 w3-margin' },
+	          { className: 'w3-card-2 w3-center w3-third' },
 	          React.createElement(
 	            'div',
-	            { id: 'login_form', className: 'parallelogram col s12 w3-col w3-card-2 w3-container w3-padding-xxlarge' },
+	            { className: 'row w3-padding-large' },
+	            React.createElement('img', { src: '../images/logo_femco.png', alt: 'FEMSA Comercio', className: 'w3-image' })
+	          ),
+	          React.createElement(
+	            'div',
+	            { className: 'row w3-padding-large' },
 	            React.createElement(
 	              'div',
-	              null,
+	              { className: 'input-field' },
 	              React.createElement(
-	                'div',
-	                { className: 'col s12 center' },
-	                React.createElement('img', { src: '../images/logo_femco.png', id: 'img_cf15_0', alt: 'FEMSA Comercio', className: 'w3-image' })
-	              )
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'row' },
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'account_circle'
+	              ),
+	              React.createElement('input', { id: 'user', name: 'user', type: 'text', ref: 'userRef', className: 'validate', required: '', 'aria-required': 'true', style: { textAlign: "center" }, value: 'susana.gaytan@oxxo.com' }),
 	              React.createElement(
-	                'div',
-	                { className: 'input-field col s12' },
-	                React.createElement(
-	                  'i',
-	                  { className: 'material-icons prefix' },
-	                  'account_circle'
-	                ),
-	                React.createElement('input', { id: 'name', name: 'usuario', type: 'number', min: '0', className: 'validate', required: '', 'aria-required': 'true' }),
-	                React.createElement(
-	                  'label',
-	                  { htmlFor: 'name' },
-	                  'N\xFAmero de Empleado'
-	                )
-	              )
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'row' },
-	              React.createElement(
-	                'div',
-	                { className: 'input-field col s12' },
-	                React.createElement(
-	                  'i',
-	                  { className: 'material-icons prefix' },
-	                  'lock_outline'
-	                ),
-	                React.createElement('input', { id: 'password2', name: 'password', type: 'password', className: 'validate', required: '', 'aria-required': 'true' }),
-	                React.createElement(
-	                  'label',
-	                  { htmlFor: 'password2' },
-	                  'Password'
-	                )
-	              )
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'row' },
-	              React.createElement(
-	                'div',
-	                { className: 'input-field col s12' },
-	                React.createElement(
-	                  'button',
-	                  { href: '/dashboard', onClick: this.checkLogin, className: 'w3-btn w3-round', id: 'button_cf15_0' },
-	                  React.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/dashboard', style: { color: "#ffffff" } },
-	                    'Entrar'
-	                  )
-	                )
+	                'label',
+	                { htmlFor: 'user' },
+	                'Empleado'
 	              )
 	            )
 	          ),
 	          React.createElement(
 	            'div',
-	            { id: 'login_img', className: 'w3-rest w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge' },
-	            React.createElement('img', { src: '../images/front.png', className: 'w3-round w3-hide-small w3-hide-medium w3-image' })
+	            { className: 'row w3-padding-large' },
+	            React.createElement(
+	              'div',
+	              { className: 'input-field' },
+	              React.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'lock_outline'
+	              ),
+	              React.createElement('input', { id: 'password', name: 'password', type: 'password', ref: 'passwordRef', className: 'validate', required: '', 'aria-required': 'true', style: { textAlign: "center" } }),
+	              React.createElement(
+	                'label',
+	                { htmlFor: 'password' },
+	                'Password'
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            { className: 'row w3-padding-large' },
+	            React.createElement(
+	              'button',
+	              { onClick: this.onSubmit, className: 'w3-btn w3-round', style: { width: "100%", backgroundColor: "RGB(120,38,52)" } },
+	              'Entrar'
+	            )
 	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'w3-rest w3-hide-small w3-padding-large' },
+	          React.createElement('img', { src: '../images/front.png', className: 'w3-round w3-image' })
 	        )
 	      )
-	    );
-	  }
+	    ); // return
+	  } // render
+
 	});
 
 	module.exports = Login;
-
-	//
-	// <div id="login_form" className="parallelogram col s12 w3-col w3-card-2 w3-container w3-padding-xxlarge" >
-	//
-	//
-	//   <div className="col s12 center">
-	//   <img src="../images/logo_femco.png" id="img_cf15_0" alt="FEMSA Comercio" className="w3-image" />
-	//   </div>
-	//   </div>
-	//
-	//   <div className="row">
-	//   <div className="input-field col s12">
-	//   <i className="material-icons prefix">account_circle</i>
-	//   <input id="name" name="usuario" type="number" min="0" className="validate" required="" aria-required="true" />
-	//   <label htmlFor="name">Número de Empleado</label>
-	//   </div>
-	//   </div>
-	//
-	//   <div className="row">
-	//   <div className="input-field col s12">
-	//   <i className="material-icons prefix">lock_outline</i>
-	//   <input id="password2" name="password" type="password" className="validate" required="" aria-required="true" />
-	//   <label htmlFor="password2">Password</label>
-	//   </div>
-	//   </div>
-	//
-	//   <div className="row">
-	//   <div className="input-field col s12">
-	//   <button href="#" className="w3-btn w3-round" id="button_cf15_0">Entrar</button>
-	//   </div>
-	//   </div>
-	//
-	//   <div id="login_img"  className="w3-rest w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge">
-	//   <img src="../images/front.png" className="w3-round w3-hide-small w3-hide-medium w3-image" />
-	//   </div>
-	//
-	//
-	// </div>
 
 /***/ },
 /* 238 */
@@ -26896,232 +26857,11 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      null,
-	      React.createElement(
-	        'div',
-	        { className: 'w3-row' },
-	        React.createElement(
-	          'div',
-	          { className: 'w3-third w3-padding-tiny' },
-	          React.createElement(
-	            'p',
-	            { className: 'w3-large w3-text-teal' },
-	            React.createElement(
-	              'b',
-	              null,
-	              React.createElement('i', { className: 'fa fa-area-chart fa-fw w3-margin-right w3-text-teal' }),
-	              'Salud de Proyectos'
-	            )
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'Proyecto 1'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge w3-small' },
-	            React.createElement(
-	              'div',
-	              { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "90%" } },
-	              React.createElement(
-	                'div',
-	                { className: 'w3-center w3-text-white' },
-	                '90%'
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'Proyecto 2'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge w3-small' },
-	            React.createElement(
-	              'div',
-	              { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "80%" } },
-	              React.createElement(
-	                'div',
-	                { className: 'w3-center w3-text-white' },
-	                '80%'
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'Proyecto 3'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge w3-small' },
-	            React.createElement(
-	              'div',
-	              { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "75%" } },
-	              React.createElement(
-	                'div',
-	                { className: 'w3-center w3-text-white' },
-	                '75%'
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'Proyecto 4'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge w3-small' },
-	            React.createElement(
-	              'div',
-	              { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "50%" } },
-	              React.createElement(
-	                'div',
-	                { className: 'w3-center w3-text-white' },
-	                '50%'
-	              )
-	            )
-	          ),
-	          React.createElement('br', null)
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'w3-third w3-padding-tiny' },
-	          React.createElement(
-	            'p',
-	            { className: 'w3-large  w3-text-teal' },
-	            React.createElement(
-	              'b',
-	              null,
-	              React.createElement('i', { className: 'fa fa-legal fa-fw w3-margin-right w3-text-teal' }),
-	              'STTI'
-	            )
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'DAN'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge' },
-	            React.createElement('div', { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "100%" } })
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'An\xE1lisis'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge' },
-	            React.createElement('div', { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "55%" } })
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'Cotizaci\xF3n'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge' },
-	            React.createElement('div', { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "25%" } })
-	          ),
-	          React.createElement('br', null)
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'w3-third w3-padding-tiny' },
-	          React.createElement(
-	            'p',
-	            { className: 'w3-large  w3-text-teal' },
-	            React.createElement(
-	              'b',
-	              null,
-	              React.createElement('i', { className: 'fa fa-star fa-fw w3-margin-right w3-text-teal' }),
-	              'RH'
-	            )
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'Adopta una tienda'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge w3-small' },
-	            React.createElement(
-	              'div',
-	              { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "90%" } },
-	              React.createElement(
-	                'div',
-	                { className: 'w3-center w3-text-white' },
-	                '90%'
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'ADES'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge w3-small' },
-	            React.createElement(
-	              'div',
-	              { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "80%" } },
-	              React.createElement(
-	                'div',
-	                { className: 'w3-center w3-text-white' },
-	                '80%'
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'TOPS'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge w3-small' },
-	            React.createElement(
-	              'div',
-	              { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "75%" } },
-	              React.createElement(
-	                'div',
-	                { className: 'w3-center w3-text-white' },
-	                '75%'
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'RV'
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: 'w3-progress-container w3-round-xlarge w3-small' },
-	            React.createElement(
-	              'div',
-	              { className: 'w3-progressbar w3-round-xlarge w3-teal', style: { width: "50%" } },
-	              React.createElement(
-	                'div',
-	                { className: 'w3-center w3-text-white' },
-	                '50%'
-	              )
-	            )
-	          ),
-	          React.createElement('br', null)
-	        )
-	      )
-	    );
-	  }
+	      { className: 'Kpi' },
+	      React.createElement('iframe', { width: '100%', height: '400px', src: 'https://app.powerbi.com/view?r=eyJrIjoiYzEyZjA0M2ItODQyMS00ODMwLThiZGUtMjlmM2M5ZDYyMzU1IiwidCI6IjY2ZjlhYjg1LWRlMWEtNDBkNC1iN2JiLTIxNTY1YWQ1N2NjZSIsImMiOjR9', frameBorder: '0', allowFullScreen: 'true' })
+	    ); // return
+	  } // render
+
 	});
 
 	module.exports = Kpi;
@@ -27137,13 +26877,13 @@
 	var FormProyectos = React.createClass({
 	  displayName: "FormProyectos",
 	  render: function render() {
-
 	    return React.createElement(
 	      "div",
-	      null,
-	      React.createElement("iframe", { width: "100%", height: "600", src: "https://app.powerbi.com/view?r=eyJrIjoiYzkyYTQ3YWUtOWIxMi00NWFjLThlMjctM2RmYWFhY2E0YWY2IiwidCI6IjY2ZjlhYjg1LWRlMWEtNDBkNC1iN2JiLTIxNTY1YWQ1N2NjZSIsImMiOjR9", frameBorder: "0", allowFullScreen: "true" })
-	    );
-	  }
+	      { className: "Proyectos" },
+	      React.createElement("iframe", { width: "100%", height: "400px", src: "https://app.powerbi.com/view?r=eyJrIjoiZGU0Y2IwMzQtYmZkMy00OGZiLWI5ZTQtNDAwMTMyNTE3M2QyIiwidCI6IjY2ZjlhYjg1LWRlMWEtNDBkNC1iN2JiLTIxNTY1YWQ1N2NjZSIsImMiOjR9", frameBorder: "0", allowFullScreen: "true" })
+	    ); // return
+	  } // render
+
 	});
 
 	module.exports = FormProyectos;
@@ -27748,47 +27488,14 @@
 
 	var Adopta = React.createClass({
 	  displayName: "Adopta",
-
-	  handleClick: function handleClick() {
-	    alert(this.props.titulo);
-	  },
-
 	  render: function render() {
 	    return React.createElement(
 	      "div",
-	      null,
-	      React.createElement(
-	        "form",
-	        { className: "w3-container" },
-	        React.createElement(
-	          "label",
-	          { className: "w3-label w3-text-blue" },
-	          React.createElement(
-	            "b",
-	            null,
-	            "Usuario"
-	          )
-	        ),
-	        React.createElement("input", { ref: "user", className: "w3-input w3-border", type: "text" }),
-	        React.createElement(
-	          "label",
-	          { className: "w3-label w3-text-blue" },
-	          React.createElement(
-	            "b",
-	            null,
-	            "Contrase\xF1a"
-	          )
-	        ),
-	        React.createElement("input", { ref: "pass", className: "w3-input w3-border", type: "text" }),
-	        React.createElement("br", null),
-	        React.createElement(
-	          "button",
-	          { className: "w3-btn w3-blue", onClick: this.handleClick },
-	          "Entrar"
-	        )
-	      )
-	    );
-	  }
+	      { className: "Adopta" },
+	      React.createElement("iframe", { width: "100%", height: "400px", src: "https://app.powerbi.com/view?r=eyJrIjoiNzgwNjQ0MWUtZWYxNy00YWI3LTkyYzYtZWM2ZjdmOTRiNjRiIiwidCI6IjY2ZjlhYjg1LWRlMWEtNDBkNC1iN2JiLTIxNTY1YWQ1N2NjZSIsImMiOjR9", frameBorder: "0", allowFullScreen: "true" })
+	    ); // return
+	  } // render
+
 	});
 
 	module.exports = Adopta;
@@ -28558,6 +28265,32 @@
 
 	var _reactRouter = __webpack_require__(179);
 
+	var _RegDAN = __webpack_require__(248);
+
+	var _RegDAN2 = _interopRequireDefault(_RegDAN);
+
+	var _EditDAN = __webpack_require__(249);
+
+	var _EditDAN2 = _interopRequireDefault(_EditDAN);
+
+	var _ContainerDAN = __webpack_require__(250);
+
+	var _ContainerDAN2 = _interopRequireDefault(_ContainerDAN);
+
+	var _RegQuot = __webpack_require__(251);
+
+	var _RegQuot2 = _interopRequireDefault(_RegQuot);
+
+	var _CumplimientoAnalisis = __webpack_require__(252);
+
+	var _CumplimientoAnalisis2 = _interopRequireDefault(_CumplimientoAnalisis);
+
+	var _DanCotizacion = __webpack_require__(253);
+
+	var _DanCotizacion2 = _interopRequireDefault(_DanCotizacion);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	var React = __webpack_require__(1);
 
 
@@ -28566,9 +28299,9 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      dataTabs: []
-	    };
+	    }; //return
 	  },
-
+	  //getInitialState
 
 	  componentDidMount: function componentDidMount() {
 	    this.serverRequest = $.get('./js/data/seccionesSTTI.json', function (result) {
@@ -28613,21 +28346,25 @@
 	        React.createElement(
 	          'div',
 	          { id: 'tabSTTI_0', className: 'tab-pane fade in active' },
+	          React.createElement(_ContainerDAN2.default, null),
 	          React.createElement('br', null)
 	        ),
 	        React.createElement(
 	          'div',
 	          { id: 'tabSTTI_1', className: 'tab-pane fade' },
+	          React.createElement(_RegQuot2.default, null),
 	          React.createElement('br', null)
 	        ),
 	        React.createElement(
 	          'div',
 	          { id: 'tabSTTI_2', className: 'tab-pane fade' },
+	          React.createElement(_DanCotizacion2.default, null),
 	          React.createElement('br', null)
 	        ),
 	        React.createElement(
 	          'div',
 	          { id: 'tabSTTI_3', className: 'tab-pane fade' },
+	          React.createElement(_CumplimientoAnalisis2.default, null),
 	          React.createElement('br', null)
 	        ),
 	        React.createElement(
@@ -28646,12 +28383,1028 @@
 /* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var RegDAN = React.createClass({
+		displayName: "RegDAN",
+
+		handleClick: function handleClick() {
+			this.props.handleToggle();
+		},
+		getInitialState: function getInitialState() {
+			return {
+				editableRow: "readwriteNO",
+				dataDANs: [{
+					check: "",
+					attach: "",
+					title: "Adecuaciones SIV-SIV",
+					folio: "I12345",
+					cpn: "Susana Gaytán",
+					analista: "Sofir Villarreal",
+					costo: "$1'234,567",
+					duracion: "300"
+				}, {
+					check: "",
+					attach: "",
+					title: "Carga Diatia Diferenciando Direcciones",
+					folio: "I23456",
+					cpn: "Susana Gaytán",
+					analista: "Sofir Villarreal",
+					costo: "$234,567",
+					duracion: "100"
+				}, {
+					check: "",
+					attach: "",
+					title: "Reactivaciones en Automático",
+					folio: "I45678",
+					cpn: "Susana Gaytán",
+					analista: "Félix Gálvez",
+					costo: "$834,567",
+					duracion: "200"
+				}] //data
+			}; //return
+		}, //getInitialState
+
+		render: function render() {
+			var filteredDANs = this.state.dataDANs;
+			var displayComponent = {
+				display: this.props.bodyVisible ? 'block' : 'none'
+			};
+			filteredDANs = filteredDANs.map(function (item, index) {
+				return React.createElement(
+					"tr",
+					{ key: index },
+					React.createElement(
+						"td",
+						null,
+						React.createElement("input", { type: "checkbox" })
+					),
+					React.createElement("td", { className: this.state.editableRow }),
+					React.createElement(
+						"td",
+						{ className: this.state.editableRow },
+						React.createElement(
+							"a",
+							{ "data-toggle": "pill", href: "#registroDAN_" + this.state.dataDANs[index].folio },
+							this.state.dataDANs[index].title
+						)
+					),
+					React.createElement(
+						"td",
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].folio
+					),
+					React.createElement(
+						"td",
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].cpn
+					),
+					React.createElement(
+						"td",
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].analista
+					),
+					React.createElement(
+						"td",
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].costo
+					),
+					React.createElement(
+						"td",
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].duracion
+					),
+					React.createElement(
+						"td",
+						null,
+						React.createElement(
+							"a",
+							{ onClick: this.handleClick },
+							React.createElement(
+								"i",
+								{ className: "material-icons" },
+								"mode_edit"
+							)
+						)
+					)
+				); //return
+			}.bind(this)); //filteredDANs.map
+			return React.createElement(
+				"div",
+				{ style: displayComponent },
+				React.createElement(
+					"table",
+					{ className: "w3-table-all w3-hoverable" },
+					React.createElement(
+						"thead",
+						null,
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"th",
+								null,
+								React.createElement("input", { type: "checkbox" })
+							),
+							React.createElement("th", { className: "noBlank" }),
+							React.createElement(
+								"th",
+								null,
+								"Title"
+							),
+							React.createElement(
+								"th",
+								null,
+								"Folio de iniciativa"
+							),
+							React.createElement(
+								"th",
+								null,
+								"CPN"
+							),
+							React.createElement(
+								"th",
+								null,
+								"Analista de Negocio"
+							),
+							React.createElement(
+								"th",
+								null,
+								"Costo DAN"
+							),
+							React.createElement(
+								"th",
+								null,
+								"Duraci\xF3n Total"
+							)
+						)
+					),
+					React.createElement(
+						"tbody",
+						null,
+						filteredDANs
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = RegDAN;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var EditDAN = React.createClass({
+		displayName: "EditDAN",
+
+		handleClick: function handleClick() {
+			this.props.handleToggle();
+		},
+		getInitialState: function getInitialState() {
+			return {
+				editableRow: "readwriteNO",
+				dataDANs: [{
+					titulo: "Adecuaciones SIV-SIV",
+					folio: "I12345",
+					lider: "Jéssica Barajas",
+					cpn: "Susana Gaytán",
+					analista: "Sofir Villarreal",
+					ventanaAnio: "2015",
+					ventanaMes: "2",
+					etapa: "Entrega DAN",
+					estatus: "Aprobado",
+					fases: [{ nombre: "Análisis" }, { nombre: "Diseño" }, { nombre: "Construcción" }, { nombre: "Pruebas" }, { nombre: "implementación" }, { nombre: "Infra" }, { nombre: "Soporte" }, { nombre: "Administración" }],
+					plataformas: [{ nombre: "Web",
+						fases: [{ fase: "Análisis", horas: "10", costo: "$80,000.00" }, { fase: "Diseño", horas: "10", costo: "$80,000.00" }, { fase: "Construcción", horas: "10", costo: "$80,000.00" }, { fase: "Pruebas", horas: "10", costo: "$80,000.00" }, { fase: "Implementación", horas: "10", costo: "$80,000.00" }, { fase: "Infra", horas: "10", costo: "$80,000.00" }, { fase: "Soporte", horas: "10", costo: "$80,000.00" }, { fase: "Administración", horas: "10", costo: "$80,000.00" }]
+					}, {
+						nombre: "Workflows",
+						fases: [{ fase: "Análisis", horas: "10", costo: "$80,000.00" }, { fase: "Diseño", horas: "10", costo: "$80,000.00" }, { fase: "Construcción", horas: "10", costo: "$80,000.00" }, { fase: "Pruebas", horas: "10", costo: "$80,000.00" }, { fase: "Implementación", horas: "10", costo: "$80,000.00" }, { fase: "Infra", horas: "10", costo: "$80,000.00" }, { fase: "Soporte", horas: "10", costo: "$80,000.00" }, { fase: "Administración", horas: "10", costo: "$80,000.00" }]
+					}],
+					totFase: "",
+					totHrs: "500",
+					totCosto: "$567,347.00",
+					totSemanas: "20",
+					comentarios: "Comentarios y más comentarios",
+					attachments: ""
+				}] //data
+			}; //return
+		}, //getInitialState
+
+		render: function render() {
+			var displayComponent = {
+				display: this.props.bodyVisible ? "block" : "none"
+			};
+			var curDAN = this.state.dataDANs;
+			var titulo = curDAN.map(function (item) {
+				return this.state.dataDANs[0].titulo;
+			}.bind(this));
+			var folio = curDAN.map(function (item) {
+				return this.state.dataDANs[0].folio;
+			}.bind(this));
+			var lider = curDAN.map(function (item) {
+				return this.state.dataDANs[0].lider;
+			}.bind(this));
+			var cpn = curDAN.map(function (item) {
+				return this.state.dataDANs[0].cpn;
+			}.bind(this));
+			var analista = curDAN.map(function (item) {
+				return this.state.dataDANs[0].analista;
+			}.bind(this));
+			var ventanaAnio = curDAN.map(function (item) {
+				return this.state.dataDANs[0].ventanaAnio;
+			}.bind(this));
+			var ventanaMes = curDAN.map(function (item) {
+				return this.state.dataDANs[0].ventanaMes;
+			}.bind(this));
+			var etapa = curDAN.map(function (item) {
+				return this.state.dataDANs[0].etapa;
+			}.bind(this));
+			var estatus = curDAN.map(function (item) {
+				return this.state.dataDANs[0].estatus;
+			}.bind(this));
+
+			//desgloses por fases
+			var fases = this.state.dataDANs[0].fases;
+			fases = fases.map(function (item, index) {
+				return React.createElement(
+					"th",
+					{ key: index },
+					this.state.dataDANs[0].fases[index].nombre
+				);
+			}.bind(this));
+
+			var plataformas = this.state.dataDANs[0].plataformas;
+			var fss = this.state.dataDANs[0].plataformas.fases;
+			plataformas = plataformas.map(function (item, index) {
+				return React.createElement(
+					"td",
+					{ key: index },
+					" ",
+					this.state.dataDANs[0].plataformas[index].nombre
+				);
+			}.bind(this));
+
+			var totFase = curDAN.map(function (item) {
+				return this.state.dataDANs[0].totFase;
+			}.bind(this));
+			var totHrs = curDAN.map(function (item) {
+				return this.state.dataDANs[0].totHrs;
+			}.bind(this));
+			var totCosto = curDAN.map(function (item) {
+				return this.state.dataDANs[0].totCosto;
+			}.bind(this));
+			var totSemanas = curDAN.map(function (item) {
+				return this.state.dataDANs[0].totSemanas;
+			}.bind(this));
+			var comentarios = curDAN.map(function (item) {
+				return this.state.dataDANs[0].comentarios;
+			}.bind(this));
+			var attachments = curDAN.map(function (item) {
+				return this.state.dataDANs[0].attachments;
+			}.bind(this));
+			return React.createElement(
+				"div",
+				{ style: displayComponent },
+				React.createElement(
+					"table",
+					{ className: "w3-table-all w3-hoverable" },
+					React.createElement(
+						"tbody",
+						null,
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"T\xEDtulo"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								titulo
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Folio de iniciativa"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								folio
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"L\xEDder de iniciativa"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								lider
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"CPN"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								cpn
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Analista de Negocio"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								analista
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Ventana"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								"A\xF1o: ",
+								ventanaAnio,
+								" \u2003 \u2003   Mes: ",
+								ventanaMes
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Iniciativa"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								"Etapa: ",
+								etapa,
+								"  \u2003 \u2003     Estatus: ",
+								estatus
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Desglose de esfuerzo y costo"
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-twothird", colSpan: "2" },
+								React.createElement(
+									"table",
+									{ className: "w3-table-all w3-hoverable" },
+									React.createElement(
+										"thead",
+										null,
+										React.createElement(
+											"tr",
+											null,
+											React.createElement(
+												"th",
+												null,
+												" \xA0 "
+											),
+											fases
+										)
+									),
+									React.createElement(
+										"tbody",
+										null,
+										React.createElement(
+											"tr",
+											null,
+											React.createElement(
+												"td",
+												null,
+												"EBS"
+											)
+										),
+										React.createElement(
+											"tr",
+											null,
+											React.createElement(
+												"td",
+												null,
+												"RMS"
+											)
+										),
+										React.createElement(
+											"tr",
+											null,
+											React.createElement(
+												"td",
+												null,
+												"Integraci\xF3n"
+											)
+										),
+										React.createElement(
+											"tr",
+											null,
+											React.createElement(
+												"td",
+												null,
+												"Workflows"
+											)
+										),
+										React.createElement(
+											"tr",
+											null,
+											React.createElement(
+												"td",
+												null,
+												"POS"
+											)
+										),
+										React.createElement(
+											"tr",
+											null,
+											React.createElement(
+												"td",
+												null,
+												"xPOS"
+											)
+										),
+										React.createElement(
+											"tr",
+											null,
+											React.createElement(
+												"td",
+												null,
+												"BI"
+											)
+										),
+										React.createElement(
+											"tr",
+											null,
+											React.createElement(
+												"td",
+												null,
+												"RDM"
+											)
+										)
+									)
+								)
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Estimaci\xF3n total por fase"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								"xxxxxx"
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Estimaci\xF3n total horas"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								totHrs
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Estimaci\xF3n total costo"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								totCosto
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Duraci\xF3n estimada (semanas)"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								totSemanas
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Comentarios"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								comentarios
+							)
+						),
+						React.createElement(
+							"tr",
+							null,
+							React.createElement(
+								"td",
+								{ className: "w3-third" },
+								"Attachments"
+							),
+							React.createElement(
+								"td",
+								{ className: "w3-twothird" },
+								attachments
+							)
+						)
+					)
+				),
+				React.createElement("br", null),
+				React.createElement(
+					"button",
+					{ onClick: this.handleClick, className: "w3-btn w3-blue" },
+					"Guardar"
+				),
+				"\xA0",
+				React.createElement(
+					"button",
+					{ onClick: this.handleClick, className: "w3-btn w3-blue" },
+					"Cancelar"
+				)
+			);
+		}
+	});
+
+	module.exports = EditDAN;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _RegDAN = __webpack_require__(248);
+
+	var _RegDAN2 = _interopRequireDefault(_RegDAN);
+
+	var _EditDAN = __webpack_require__(249);
+
+	var _EditDAN2 = _interopRequireDefault(_EditDAN);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var React = __webpack_require__(1);
+
+	var ContainerDAN = React.createClass({
+	  displayName: 'ContainerDAN',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      editDANVisible: false,
+	      regDANVisible: true
+	    };
+	  },
+
+	  showComponent: function showComponent() {
+	    var tempEditVisibility = !this.state.editDANVisible;
+	    var tempRegVisibility = !this.state.regDANVisible;
+	    this.setState({
+	      editDANVisible: tempEditVisibility,
+	      regDANVisible: tempRegVisibility
+	    });
+	  },
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(_RegDAN2.default, {
+	        bodyVisible: this.state.regDANVisible,
+	        handleToggle: this.showComponent
+	      }),
+	      React.createElement(_EditDAN2.default, {
+	        bodyVisible: this.state.editDANVisible,
+	        handleToggle: this.showComponent
+	      })
+	    );
+	  }
+	});
+
+	module.exports = ContainerDAN;
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var RegQuot = React.createClass({
+		displayName: 'RegQuot',
+
+		handleClick: function handleClick() {
+			this.setState({ editableRow: 'readwrite' });
+		},
+		getInitialState: function getInitialState() {
+			return {
+				editableRow: "readwriteNO",
+				dataDANs: [{
+					check: "",
+					attach: "",
+					title: "Adecuaciones SIV-SIV",
+					folio: "I12345",
+					cpn: "Susana Gaytán",
+					analista: "Sofir Villarreal",
+					costo: "$1'234,567",
+					duracion: "300"
+				}, {
+					check: "",
+					attach: "",
+					title: "Carga Diatia Diferenciando Direcciones",
+					folio: "I23456",
+					cpn: "Susana Gaytán",
+					analista: "Sofir Villarreal",
+					costo: "$234,567",
+					duracion: "100"
+				}, {
+					check: "",
+					attach: "",
+					title: "Reactivaciones en Automático",
+					folio: "I45678",
+					cpn: "Susana Gaytán",
+					analista: "Félix Gálvez",
+					costo: "$834,567",
+					duracion: "200"
+				}] //data
+			}; //return
+		}, //getInitialState
+
+		render: function render() {
+			var filteredDANs = this.state.dataDANs;
+			filteredDANs = filteredDANs.map(function (item, index) {
+				return React.createElement(
+					'tr',
+					{ key: index },
+					React.createElement(
+						'td',
+						null,
+						React.createElement('input', { type: 'checkbox' })
+					),
+					React.createElement('td', { className: this.state.editableRow }),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].title
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].folio
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].cpn
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].analista
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].costo
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].duracion
+					),
+					React.createElement(
+						'td',
+						null,
+						React.createElement(
+							'a',
+							{ onClick: this.handleClick },
+							React.createElement(
+								'i',
+								{ className: 'material-icons' },
+								'mode_edit'
+							)
+						)
+					)
+				); //return
+			}.bind(this)); //filteredDANs.map
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'table',
+					{ className: 'w3-table-all w3-hoverable' },
+					React.createElement(
+						'thead',
+						null,
+						React.createElement(
+							'tr',
+							null,
+							React.createElement(
+								'th',
+								null,
+								React.createElement('input', { type: 'checkbox' })
+							),
+							React.createElement('th', { className: 'noBlank' }),
+							React.createElement(
+								'th',
+								null,
+								'Title'
+							),
+							React.createElement(
+								'th',
+								null,
+								'Folio de iniciativa'
+							),
+							React.createElement(
+								'th',
+								null,
+								'CPN'
+							),
+							React.createElement(
+								'th',
+								null,
+								'Analista de Negocio'
+							),
+							React.createElement(
+								'th',
+								null,
+								'Costo DAN'
+							),
+							React.createElement(
+								'th',
+								null,
+								'Duraci\xF3n Total'
+							)
+						)
+					),
+					React.createElement(
+						'tbody',
+						null,
+						filteredDANs
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = RegQuot;
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var CumplimientoAnalisis = React.createClass({
+		displayName: 'CumplimientoAnalisis',
+
+		handleClick: function handleClick() {
+			this.setState({ editableRow: 'readwrite' });
+		},
+		getInitialState: function getInitialState() {
+			return {
+				editableRow: "readwriteNO",
+				dataDANs: [{
+					check: "",
+					title: "Adecuaciones SIV-SIV",
+					folio: "I12345",
+					cpn: "Susana Gaytán",
+					analista: "Sofir Villarreal",
+					cumplimiento: "100%"
+				}, {
+					check: "",
+					title: "Carga Diatia Diferenciando Direcciones",
+					folio: "I23456",
+					cpn: "Susana Gaytán",
+					analista: "Sofir Villarreal",
+					cumplimiento: "90%"
+				}, {
+					check: "",
+					title: "Reactivaciones en Automático",
+					folio: "I45678",
+					cpn: "Susana Gaytán",
+					analista: "Félix Gálvez",
+					cumplimiento: "100%"
+				}] //data
+			}; //return
+		}, //getInitialState
+
+		render: function render() {
+			var filteredDANs = this.state.dataDANs;
+			filteredDANs = filteredDANs.map(function (item, index) {
+				return React.createElement(
+					'tr',
+					{ key: index },
+					React.createElement(
+						'td',
+						null,
+						React.createElement('input', { type: 'checkbox' })
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].title
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].folio
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].cpn
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].analista
+					),
+					React.createElement(
+						'td',
+						{ className: this.state.editableRow },
+						this.state.dataDANs[index].cumplimiento
+					),
+					React.createElement(
+						'td',
+						null,
+						React.createElement(
+							'a',
+							{ onClick: this.handleClick },
+							React.createElement(
+								'i',
+								{ className: 'material-icons' },
+								'mode_edit'
+							)
+						)
+					)
+				); //return
+			}.bind(this)); //filteredDANs.map
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'table',
+					{ className: 'w3-table-all w3-hoverable' },
+					React.createElement(
+						'thead',
+						null,
+						React.createElement(
+							'tr',
+							null,
+							React.createElement(
+								'th',
+								null,
+								React.createElement('input', { type: 'checkbox' })
+							),
+							React.createElement(
+								'th',
+								null,
+								'Title'
+							),
+							React.createElement(
+								'th',
+								null,
+								'Folio de iniciativa'
+							),
+							React.createElement(
+								'th',
+								null,
+								'CPN'
+							),
+							React.createElement(
+								'th',
+								null,
+								'Analista de Negocio'
+							),
+							React.createElement(
+								'th',
+								null,
+								'Cumpliiento'
+							),
+							React.createElement(
+								'th',
+								{ className: 'noBlank' },
+								' '
+							)
+						)
+					),
+					React.createElement(
+						'tbody',
+						null,
+						filteredDANs
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = CumplimientoAnalisis;
+
+/***/ },
+/* 253 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var DanCotizacion = React.createClass({
+	  displayName: "DanCotizacion",
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      { className: "DanCotizacion" },
+	      React.createElement("iframe", { width: "100%", height: "400px", src: "https://app.powerbi.com/view?r=eyJrIjoiNTFiZTE3MjQtOGFiNi00NTM1LWJjMDgtOTI2Mzc3YzBkZjkwIiwidCI6IjY2ZjlhYjg1LWRlMWEtNDBkNC1iN2JiLTIxNTY1YWQ1N2NjZSIsImMiOjR9", frameBorder: "0", allowFullScreen: "true" })
+	    ); // return
+	  } // render
+
+	});
+
+	module.exports = DanCotizacion;
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	var _reactRouter = __webpack_require__(179);
 
 	var React = __webpack_require__(1);
-	var _ = __webpack_require__(249);
+	var _ = __webpack_require__(255);
 
 
 	var Menu = React.createClass({
@@ -28836,7 +29589,7 @@
 	            ),
 	            React.createElement(
 	              'div',
-	              { id: 'estrategico', className: 'collapse in' },
+	              { id: 'estrategico', className: 'collapse' },
 	              React.createElement(
 	                'div',
 	                { style: { marginLeft: 50 } },
@@ -28902,14 +29655,15 @@
 	          )
 	        )
 	      )
-	    );
-	  }
+	    ); // return
+	  } // render
+
 	});
 
 	module.exports = Menu;
 
 /***/ },
-/* 249 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -45978,10 +46732,10 @@
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(250)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(256)(module)))
 
 /***/ },
-/* 250 */
+/* 256 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -45997,7 +46751,7 @@
 
 
 /***/ },
-/* 251 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46009,11 +46763,11 @@
 	  render: function render() {
 	    return React.createElement(
 	      "footer",
-	      { className: "w3-teal w3-center" },
+	      { className: "w3-center", style: { width: "100%", backgroundColor: "RGB(120,38,52)", color: "#FFFFFF" } },
 	      React.createElement(
 	        "p",
 	        null,
-	        "Footer Component"
+	        "Cadena Comercial OXXO S.A. DE C.V."
 	      )
 	    );
 	  }

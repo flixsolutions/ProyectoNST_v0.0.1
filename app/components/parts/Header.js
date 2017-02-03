@@ -1,27 +1,28 @@
-var React = require('react');
-import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
-var Header = React.createClass({
+import React from 'react';
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
 
+var Header = React.createClass({
+    getInitialState(){
+      return{
+        value1: "test"
+      }
+    },
     render(){
       return (
-        <div>
+        <div className="Header w3-hide-small w3-hide-medium">
           <div className="w3-row w3-center w3-card-4 w3-white">
-            <div className="w3-quarter">
-              <Link to="/dashboard" className="w3-right" style={{cursor:"pointer"}}><img src={"./images/logo_femco.png"} style={{width:"60%"}} className="w3-margin"/></Link>
-            </div>
-            <div className="w3-half">
-              <h2 className="w3-margin">Scorecard NST</h2>
+            <div className="w3-threequarter">
+              <img src={"./images/FondoHeaderSinLogo.jpg"} style={{width:"100%"}} className="w3-margin"/>
             </div>
             <div className="w3-quarter">
-              <div className="w3-row">
-                  <div className="w3-row"><Link to="/login" className="w3-right" style={{cursor:"pointer"}}><i className="fa fa-sign-in"></i> Salir</Link></div>
+              <div className="w3-row" >
+                  <img src={"./images/logo_femco.png"} style={{width:"90%"}} className="w3-margin"/>
               </div>
             </div>
           </div>
         </div>
-      )
-    }
-
+    )// return
+  }// render
 });
 
-module.exports = Header;
+export default Header;

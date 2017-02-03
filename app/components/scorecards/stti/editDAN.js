@@ -143,7 +143,7 @@ var EditDAN = React.createClass({
 
 						</tr>
 						<tr>
-							<td className="w3-twothird" colspan="2">
+							<td className="w3-twothird" colSpan="2">
 								<table className="w3-table-all w3-hoverable">
 									<thead>
 										<tr>

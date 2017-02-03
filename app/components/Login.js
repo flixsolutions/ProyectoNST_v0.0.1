@@ -1,97 +1,49 @@
 var React = require('react');
+import {createBrowserHistory} from 'history/lib/createBrowserHistory'
 import { Link} from 'react-router'
 
 var Login = React.createClass({
-    checkLogin: function(){
-
+    onSubmit(){      
+      var user = this.refs.userRef.value;
+      var password = this.refs.passwordRef.value;
+      this.props.checkLogin(user,password);
     },
+    componentDidMount(){
 
+    },//componentDidMount
     render(){
       return (
-        <div>
-          <div className="w3-row-padding">
-            <div className="w3-half w3-container">
-              <div id="topForm" className="w3-card-4 w3-margin col-xs-4" style={{margin: "0px auto", paddingLeft:"70px",  width: "90%", height: "470px"}}>
-                <div  id="login_form" className="w3-half  parallelogram w3-card-2 w3-center" style={{ marginTop:"10px", width: "300px"}}>
-                  <div className="row">
-                    <div className="center">
-                    <img src="../images/logo_femco.png" style={{padding: "30px"}} alt="FEMSA Comercio" className="w3-image" />
-                    </div>
+        <div className="Login">
+              <div className="w3-card-2 w3-row w3-padding-large">
+                <div  className="w3-card-2 w3-center w3-third">
+                  <div className="row w3-padding-large">
+                    <img src="../images/logo_femco.png" alt="FEMSA Comercio" className="w3-image" />
                   </div>
-                  <div className="row">
-                    <div className="input-field col s12">
+                  <div className="row w3-padding-large">
+                    <div className="input-field">
                       <i className="material-icons prefix">account_circle</i>
-                      <input id="name" name="usuario" type="number" className="validate" required="" aria-required="true" />
-                      <label htmlFor="name">No. Empleado</label>
+                      <input id="user" name="user" type="text"  ref="userRef" className="validate" required="" aria-required="true" style={{textAlign:"center"}} value="susana.gaytan@oxxo.com" />
+                      <label htmlFor="user">Empleado</label>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="input-field col s12">
+                  <div className="row w3-padding-large">
+                    <div className="input-field">
                       <i className="material-icons prefix">lock_outline</i>
-                      <input id="password2" name="password" type="password" className="validate" required="" aria-required="true" />
-                      <label htmlFor="password2">Password</label>
+                      <input id="password" name="password" type="password" ref="passwordRef" className="validate" required="" aria-required="true" style={{textAlign:"center"}} />
+                      <label htmlFor="password">Password</label>
                     </div>
                   </div>
-
-                  <div className="row">
-                    <div className="input-field col s12">
-                      <button href="/dashboard" className="w3-btn w3-round" style={{width: "100%", backgroundColor: "RGB(120,38,52)"}}>Entrar</button>
-                    </div>
+                  <div className="row w3-padding-large">
+                      <button onClick={this.onSubmit} className="w3-btn w3-round" style={{width:"100%", backgroundColor: "RGB(120,38,52)"}}>Entrar</button>
                   </div>
                 </div>
+                <div className="w3-rest w3-hide-small w3-padding-large">
+                  <img src="../images/front.png"  className="w3-round w3-image" />
+                </div>
               </div>
-            </div>
-            <div className="w3-half w3-container">
-              <div id="login_img" style={{margin: "0px auto", width:"100%", height: "470px"}} className="w3-half w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge">
-                <img src="../images/front.png"  className="w3-round w3-hide-small w3-hide-medium w3-image" />
-              </div>
-            </div>
-          </div>
-
-
         </div>
-      )
-    }
-
+    )// return
+  }// render
 });
 
 module.exports = Login;
-
-
-//
-// <div id="login_form" className="parallelogram col s12 w3-col w3-card-2 w3-container w3-padding-xxlarge" >
-//
-//
-//   <div className="col s12 center">
-//   <img src="../images/logo_femco.png" id="img_cf15_0" alt="FEMSA Comercio" className="w3-image" />
-//   </div>
-//   </div>
-//
-//   <div className="row">
-//   <div className="input-field col s12">
-//   <i className="material-icons prefix">account_circle</i>
-//   <input id="name" name="usuario" type="number" min="0" className="validate" required="" aria-required="true" />
-//   <label htmlFor="name">Número de Empleado</label>
-//   </div>
-//   </div>
-//
-//   <div className="row">
-//   <div className="input-field col s12">
-//   <i className="material-icons prefix">lock_outline</i>
-//   <input id="password2" name="password" type="password" className="validate" required="" aria-required="true" />
-//   <label htmlFor="password2">Password</label>
-//   </div>
-//   </div>
-//
-//   <div className="row">
-//   <div className="input-field col s12">
-//   <button href="#" className="w3-btn w3-round" id="button_cf15_0">Entrar</button>
-//   </div>
-//   </div>
-//
-//   <div id="login_img"  className="w3-rest w3-container w3-hide-small w3-hide-medium w3-container w3-margin-top w3-padding-xxlarge">
-//   <img src="../images/front.png" className="w3-round w3-hide-small w3-hide-medium w3-image" />
-//   </div>
-//
-//
-// </div>

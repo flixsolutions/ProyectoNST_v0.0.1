@@ -114,7 +114,7 @@ var Menu = React.createClass({
             <div className="w3-hide-small w3-hide-medium">
               <div className="w3-container">
                 <p><i className="fa fa-lightbulb-o fa-fw w3-margin-right w3-large w3-text-teal"></i><a data-toggle="collapse" data-target="#estrategico" style={{color:"gray", cursor:"pointer"}} aria-expanded="true">Equipo Estratégico</a></p>
-                <div id="estrategico" className="collapse in">
+                <div id="estrategico" className="collapse">
                   <div style={{marginLeft:50}}>
                     <ul>
                       {filteredAreas}
@@ -151,9 +151,8 @@ var Menu = React.createClass({
 
 
         </div>
-      )
-    }
-
+     )// return
+  }// render
 });
 
 module.exports = Menu;
